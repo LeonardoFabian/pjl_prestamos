@@ -1,7 +1,11 @@
 <!-- Customers DataTable  -->
 <div class="card shadow mb-4">
-	<div class="card-header py-3">
-		<h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+	<div class="card-header d-flex align-items-center justify-content-between py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Clientes</h6>
+		<!-- add customer button -->
+		<a class="d-sm-inline-block btn btn-primary" href="<?php echo site_url('admin/customers/edit'); ?>">
+			<i class="fas user-plus pr-2"></i>Nuevo cliente
+		</a>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">

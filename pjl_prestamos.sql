@@ -56,29 +56,34 @@ CREATE TABLE `customers` (
   `first_name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `last_name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `gender` enum('masculino','femenino','','') COLLATE utf8_spanish_ci DEFAULT NULL,
+	`birthday` date NOT NULL,
   `country_id` int(11) DEFAULT NULL,
   `state_id` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
   `city_id` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
   `address` varchar(160) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apto` varchar(15) DEFAULT NULL,
+  `floor` int(11) DEFAULT 0,
   `mobile` varchar(32) COLLATE utf8_spanish_ci DEFAULT NULL,
   `phone` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `business_name` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `ruc` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `company` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `loan_status` int(11) NOT NULL DEFAULT 0
+  `loan_status` int(11) NOT NULL DEFAULT 0,
+	`created_at` timestamp,
+	`uupdated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `customers`
 --
 
-INSERT INTO `customers` (`id`, `document_id`, `first_name`, `last_name`, `gender`, `country_id`, `state_id`, `city_id`, `address`, `mobile`, `phone`, `business_name`, `ruc`, `company`, `loan_status`) VALUES
-(8, '12345678', 'maria', 'chavez', 'masculino', NULL, NULL, NULL, '', '', '', '', '', '', 0),
-(9, '344555', 'mario', 'flores', 'femenino', 10, '1003', '100311', '', '', '', '', '', '', 1),
-(10, '12344', 'ruben', 'chavez', 'masculino', 10, '1002', '100202', 'av el incas98', '', '', '', '', '', 1),
-(11, '123451', 'diego', 'arnica', 'masculino', 12, '1203', '120303', 'mariano cron 45', '', '', '', '', '', 1),
-(12, '7654321', 'matilde', 'frisanc', 'femenino', 11, '1103', '110304', 'choqwur n455', '', '', '', '', '', 1),
-(13, '1223', 'pablo', 'moralesss', 'masculino', 10, '1002', '100202', '', '', '', '', '', '', 1);
+INSERT INTO `customers` (`id`, `document_id`, `first_name`, `last_name`, `gender`, `birthday`, `country_id`, `state_id`, `city_id`, `address`, `apto`, `floor`, `mobile`, `phone`, `business_name`, `ruc`, `company`, `loan_status`) VALUES
+(8, '12345678', 'maria', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', '', '', '', 0),
+(9, '344555', 'mario', 'flores', 'femenino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', '', '', '', 1),
+(10, '12344', 'ruben', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', 'av el incas98', NULL, 0, '', '', '', '', '', 1),
+(11, '123451', 'diego', 'arnica', 'masculino', '1986-09-20', 01, '0101', '010101', 'mariano cron 45', NULL, 0, '', '', '', '', '', 1),
+(12, '7654321', 'matilde', 'frisanc', 'femenino', '1986-09-20', 01, '0101', '010101', 'choqwur n455', NULL, 0, '', '', '', '', '', 1),
+(13, '1223', 'pablo', 'moralesss', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
