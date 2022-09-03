@@ -3,9 +3,9 @@
 	<!-- Sidebar - Brand -->
 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 		<div class="sidebar-brand-icon rotate-n-15">
-			<i class="fas fa-laugh-wink"></i>
+			<i class="fas fa-dollar-sign"></i>
 		</div>
-		<div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+		<div class="sidebar-brand-text mx-3">Dashboard</div>
 	</a>
 
 	<!-- Divider -->
@@ -14,7 +14,7 @@
 	<!-- Nav Item - Dashboard -->
 	<li class="nav-item active">
 		<a class="nav-link" href="<?php echo site_url( 'admin/dashboard' ); ?>">
-			<i class="fas fa-fw fa-tachometer-alt"></i>
+			<i class="fas fa-home"></i>
 			<span>Inicio</span></a>
 	</li>
 
@@ -24,14 +24,14 @@
 	<!-- Nav Item - Customers -->
 	<li class="nav-item">
 		<a class="nav-link" href="<?php echo site_url( 'admin/customers' ); ?>">
-			<i class="fas fa-fw fa-chart-area"></i>
+			<i class="fas fa-fw fa-users"></i>
 			<span>Clientes</span></a>
 	</li>
 
 	<!-- Nav Item - Coins -->
 	<li class="nav-item">
 		<a class="nav-link" href="<?php echo site_url( 'admin/coins' ); ?>">
-			<i class="fas fa-fw fa-chart-area"></i>
+			<i class="fas fa-fw fa-coins"></i>
 			<span>Monedas</span></a>
 	</li>
 
