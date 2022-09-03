@@ -1,6 +1,6 @@
 <?php 
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('Acceso denegado');
 
 class User extends CI_Controller {
 

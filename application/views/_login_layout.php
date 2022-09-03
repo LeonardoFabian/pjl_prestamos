@@ -51,13 +51,13 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
@@ -84,12 +84,6 @@
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo site_url() ?>assets/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo site_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo site_url() ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?php echo site_url() ?>assets/js/sb-admin-2.min.js"></script>
 
 </body>
 
