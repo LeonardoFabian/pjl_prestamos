@@ -7,20 +7,27 @@
 
 		<?php echo form_open(); ?>
 
+			<div class="form-row py-3">
+				<h5>Datos Personales</h5>
+			</div>
+
 			<div class="form-row pb-2">
-				<div class="col">
+				<div class="col-3">
 					<label for="document_id">Documento de Identidad</label>
-					<input type="text" id="document_id" class="form-control" placeholder="">
+					<input type="text" id="document_id" class="form-control">
 				</div>
 				<div class="col">
 					<label for="first_name">Nombre</label>
-					<input type="text" id="first_name" class="form-control" placeholder="">
+					<input type="text" id="first_name" class="form-control">
 				</div>
 				<div class="col">
 					<label for="last_name">Apellidos</label>
-					<input type="text" id="last_name" class="form-control" placeholder="">
-				</div>
-				<div class="col">
+					<input type="text" id="last_name" class="form-control">
+				</div>				
+			</div>
+
+			<div class="form-row pb-2">				
+				<div class="col-4">
 					<label for="gender">Género</label>
 					<select id="gender" class="form-control">
 						<option selected>Selecciona...</option>
@@ -28,9 +35,17 @@
 						<option>Femenino</option>
 					</select>
 				</div>
+				<div class="col-4">
+					<label for="birthday">Fecha de nacimiento</label>
+					<input type="date" id="birthday" class="form-control">
+				</div>	
 			</div>
 
 			<hr class="mt-4 mb-4" />
+
+			<div class="form-row py-3">
+				<h5>Dirección</h5>
+			</div>
 
 			<div class="form-row pb-2">
 				<!-- country -->
@@ -72,14 +87,56 @@
 			</div>
 			
 			<div class="form-row pb-2">
-				<div class="col">
+				<div class="col-3">
 					<label for="apto">Apto/Casa</label>
-					<input type="text" id="apto" class="form-control" placeholder="">
+					<input type="text" id="apto" class="form-control">
+				</div>
+				<div class="col-3">
+					<label for="floor">Piso<sup>*</sup></label>
+					<input type="text" id="floor" class="form-control">
+				</div>
+			</div>
+
+			<hr class="mt-4 mb-4" />
+
+			<div class="form-row py-3">
+				<h5>Información de Contacto</h5>
+			</div>
+
+			<div class="form-row pb-2">
+				<div class="col">
+					<label for="mobile">Celular</label>
+					<input type="text" id="mobile" class="form-control">
 				</div>
 				<div class="col">
-					<label for="floor">Piso<sup>*</sup></label>
-					<input type="text" id="floor" class="form-control" placeholder="">
+					<label for="phone">Télefono</label>
+					<input type="text" id="phone" class="form-control">
 				</div>
+				<div class="col-6">
+					<label for="email">Correo</label>
+					<input type="email" id="email" class="form-control">
+				</div>				
+			</div>
+
+			<hr class="mt-4 mb-4" />
+
+			<div class="form-row py-3">
+				<h5>Datos de la Empresa</h5>
+			</div>
+
+			<div class="form-row pb-2">
+				<div class="col-3">
+					<label for="business_name">Razón Social</label>
+					<input type="text" id="business_name" class="form-control">
+				</div>
+				<div class="col">
+					<label for="rnc">RNC</label>
+					<input type="text" id="rnc" class="form-control">
+				</div>
+				<div class="col-6">
+					<label for="company">Nombre Comercial</label>
+					<input type="text" id="company" class="form-control">
+				</div>				
 			</div>
 
 			<div class="form-row mt-4 mb-2">

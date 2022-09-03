@@ -18,8 +18,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ci-cobranza2`
+-- Base de datos: `pjl_prestamos`
 --
+DROP DATABASE `pjl_prestamos`;
+CREATE DATABASE `pjl_prestamos`;
+
+USE `pjl_prestamos`;
 
 -- --------------------------------------------------------
 
@@ -65,8 +69,9 @@ CREATE TABLE `customers` (
   `floor` int(11) DEFAULT 0,
   `mobile` varchar(32) COLLATE utf8_spanish_ci DEFAULT NULL,
   `phone` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `business_name` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `ruc` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `rnc` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `company` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
   `loan_status` int(11) NOT NULL DEFAULT 0,
 	`created_at` timestamp,
@@ -77,13 +82,13 @@ CREATE TABLE `customers` (
 -- Volcado de datos para la tabla `customers`
 --
 
-INSERT INTO `customers` (`id`, `document_id`, `first_name`, `last_name`, `gender`, `birthday`, `country_id`, `state_id`, `city_id`, `address`, `apto`, `floor`, `mobile`, `phone`, `business_name`, `ruc`, `company`, `loan_status`) VALUES
-(8, '12345678', 'maria', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', '', '', '', 0),
-(9, '344555', 'mario', 'flores', 'femenino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', '', '', '', 1),
-(10, '12344', 'ruben', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', 'av el incas98', NULL, 0, '', '', '', '', '', 1),
-(11, '123451', 'diego', 'arnica', 'masculino', '1986-09-20', 01, '0101', '010101', 'mariano cron 45', NULL, 0, '', '', '', '', '', 1),
-(12, '7654321', 'matilde', 'frisanc', 'femenino', '1986-09-20', 01, '0101', '010101', 'choqwur n455', NULL, 0, '', '', '', '', '', 1),
-(13, '1223', 'pablo', 'moralesss', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', '', '', '', 1);
+INSERT INTO `customers` (`id`, `document_id`, `first_name`, `last_name`, `gender`, `birthday`, `country_id`, `state_id`, `city_id`, `address`, `apto`, `floor`, `mobile`, `phone`, `email`, `business_name`, `rnc`, `company`, `loan_status`) VALUES
+(8, '12345678', 'maria', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', 'correo1@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', 0),
+(9, '344555', 'mario', 'flores', 'femenino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', 'correo2@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', 1),
+(10, '12344', 'ruben', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', 'av el incas98', NULL, 0, '', '', 'correo3@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', 1),
+(11, '123451', 'diego', 'arnica', 'masculino', '1986-09-20', 01, '0101', '010101', 'mariano cron 45', NULL, 0, '', '', 'correo4@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', 1),
+(12, '7654321', 'matilde', 'frisanc', 'femenino', '1986-09-20', 01, '0101', '010101', 'choqwur n455', NULL, 0, '', '', 'correo5@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', 1),
+(13, '1223', 'pablo', 'moralesss', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', 'correo6@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', 1);
 
 -- --------------------------------------------------------
 
