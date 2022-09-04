@@ -14,7 +14,7 @@ class MY_Model extends CI_Model {
 	 * @param boolean $single
 	 * @return void
 	 */
-	public function get( $id = null, $single = FALSE )
+	public function get( $id = NULL, $single = FALSE )
 	{
 		if ( $id != NULL ) {
 			$this->db->where( $this->_primary_key, $id );
@@ -109,7 +109,8 @@ class MY_Model extends CI_Model {
 	 */
 	public function hash( $string ) 
 	{
-		return hash( 'sha512', $string . config_item('encryption_key') );
+		return hash( 'sha512', $string );
+		// return hash( 'sha512', $string . config_item('encryption_key') );
 	}
 
 }
