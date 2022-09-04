@@ -28,14 +28,19 @@ class Customers_m extends MY_Model {
 			'rules' => 'required'
 		),
 		array(
+			'field' => 'apto',
+			'label' => 'Número de Apartamento o Casa',
+			'rules' => 'required'
+		),
+		array(
 			'field' => 'floor',
 			'label' => 'Piso',
-			'rules' => 'is_natural'
+			'rules' => 'numeric'
 		),
 		array(
 			'field' => 'mobile',
 			'label' => 'Móvil',
-			'rules' => 'min_length[10]'
+			'rules' => 'required|min_length[10]'
 		),
 		array(
 			'field' => 'phone',
@@ -56,6 +61,21 @@ class Customers_m extends MY_Model {
 			'field' => 'rnc',
 			'label' => 'RNC',
 			'rules' => 'min_length[9]'
+		),
+		array(
+			'field' => 'country_id',
+			'label' => 'País',
+			'rules' => 'required'
+		),
+		array(
+			'field' => 'state_id',
+			'label' => 'Provincia o Estado',
+			'rules' => 'required'
+		),
+		array(
+			'field' => 'city_id',
+			'label' => 'Ciudad o Municipio',
+			'rules' => 'required'
 		),
 	);
 

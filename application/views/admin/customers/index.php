@@ -8,6 +8,18 @@
 		</a>
 	</div>
 	<div class="card-body">
+
+		<!-- msgs -->
+		<?php if ( $this->session->flashdata( 'msg' ) ) : ?>
+			<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+				<?= $this->session->flashdata( 'msg' ); ?>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>		
+		<?php endif; ?>							
+		<!-- / msgs -->
+
 		<div class="table-responsive">
 			<table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0">
 				<thead>

@@ -10,7 +10,6 @@ class Customers extends CI_Controller {
 
 		$this->load->model( 'customers_m' );
 
-		// form library
 		$this->load->library('form_validation');
 
 		$this->load->library( 'session' );
@@ -33,8 +32,38 @@ class Customers extends CI_Controller {
 	 *
 	 * @return void
 	 */
-	public function edit() 
+	public function edit( $id = NULL ) 
 	{
+		if ( $id ) {
+
+			$data['customer'] = $this->customers_m->get( $id );
+
+		} else {
+
+			$data['customer'] = $this->customers_m->get_new();
+
+		}
+
+		$rules = $this->customers_m->customer_rules;
+
+		$this->form_validation->set_rules( $rules );
+
+		if ( $this->form_validation->run() == TRUE ) {
+
+			$customer_data = $this->customers_m->array_from_post(['document_id', 'first_name', 'last_name', 'gender', 'birthday', 'country_id', 'state_id', 'city_id', 'address', 'apto', 'floor', 'mobile', 'phone', 'email', 'business_name', 'rnc', 'company', 'company_phone', 'company_address']);
+
+			$this->customers_m->save( $customer_data, $id );
+
+			if ( $id ) {
+				$this->session->set_flashdata('msg', 'Cliente editado correctamente');
+			} else {
+				$this->session->set_flashdata('msg', 'Cliente agregado correctamente');
+			}
+
+			redirect( 'admin/customers' );
+
+		}
+
 		$data['subview'] = 'admin/customers/edit';
 		$this->load->view( 'admin/_main_layout', $data );
 	}

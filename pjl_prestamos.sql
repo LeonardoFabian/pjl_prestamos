@@ -60,7 +60,7 @@ CREATE TABLE `customers` (
   `first_name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `last_name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `gender` enum('masculino','femenino','no especificado','') COLLATE utf8_spanish_ci DEFAULT NULL,
-	`birthday` date NOT NULL,
+	`birthday` date DEFAULT NULL,
   `country_id` int(11) DEFAULT NULL,
   `state_id` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
   `city_id` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -86,12 +86,12 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `document_id`, `first_name`, `last_name`, `gender`, `birthday`, `country_id`, `state_id`, `city_id`, `address`, `apto`, `floor`, `mobile`, `phone`, `email`, `business_name`, `rnc`, `company`, `company_phone`, `company_address`, `loan_status`) VALUES
-(8, '12345678', 'maria', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', 'correo1@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 0),
-(9, '344555', 'mario', 'flores', 'femenino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', 'correo2@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(10, '12344', 'ruben', 'chavez', 'masculino', '1986-09-20', 01, '0101', '010101', 'av el incas98', NULL, 0, '', '', 'correo3@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(11, '123451', 'diego', 'arnica', 'masculino', '1986-09-20', 01, '0101', '010101', 'mariano cron 45', NULL, 0, '', '', 'correo4@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(12, '7654321', 'matilde', 'frisanc', 'femenino', '1986-09-20', 01, '0101', '010101', 'choqwur n455', NULL, 0, '', '', 'correo5@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(13, '1223', 'pablo', 'moralesss', 'masculino', '1986-09-20', 01, '0101', '010101', '', NULL, 0, '', '', 'correo6@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1);
+(8, '12345678', 'maria', 'chavez', 'masculino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo1@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 0),
+(9, '344555', 'mario', 'flores', 'femenino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo2@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+(10, '12344', 'ruben', 'chavez', 'masculino', NULL, 01, '0101', '010101', 'av el incas98', NULL, 0, '', '', 'correo3@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+(11, '123451', 'diego', 'arnica', 'masculino', NULL, 01, '0101', '010101', 'mariano cron 45', NULL, 0, '', '', 'correo4@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+(12, '7654321', 'matilde', 'frisanc', 'femenino', NULL, 01, '0101', '010101', 'choqwur n455', NULL, 0, '', '', 'correo5@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+(13, '1223', 'pablo', 'moralesss', 'masculino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo6@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -283,7 +283,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`) VALUES
 (1, 'Leonardo', 'Fabian', 'ramonlfabian@gmail.com', 'ad57cb3de9c53c1fc7de94665f6f1db2dfbcaaf73063769fed0b3011466eba602c2f423c4725c6dfacdc2973a518a18e0784e848ca3aabd7cadfd140df1df447'),
-(2, 'Jacobo', 'Urraca', 'jacrood@gmail.com', 'ad57cb3de9c53c1fc7de94665f6f1db2dfbcaaf73063769fed0b3011466eba602c2f423c4725c6dfacdc2973a518a18e0784e848ca3aabd7cadfd140df1df447');
+(2, 'Jacobo', 'Urraca', 'jacrood@gmail.com', 'ad57cb3de9c53c1fc7de94665f6f1db2dfbcaaf73063769fed0b3011466eba602c2f423c4725c6dfacdc2973a518a18e0784e848ca3aabd7cadfd140df1df447'),
+(3, 'Pascual', 'Sanchez', 'pascual_sanchezv@hotmail.com', 'ad57cb3de9c53c1fc7de94665f6f1db2dfbcaaf73063769fed0b3011466eba602c2f423c4725c6dfacdc2973a518a18e0784e848ca3aabd7cadfd140df1df447');
 
 --
 -- Índices para tablas volcadas
