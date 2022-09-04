@@ -20,6 +20,8 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo site_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+	<link href="<?php echo site_url() ?>assets/css/style.css" rel="stylesheet">
+
 </head>
 
 <body class="bg-gradient-primary">
@@ -41,33 +43,45 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenido</h1>
                                     </div>
-                                    <form class="user">
+
+									<!-- msgs -->
+									<?php if ( $this->session->flashdata( 'msg' ) ) : ?>
+										<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+											<?= $this->session->flashdata( 'msg' ); ?>
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>		
+									<?php endif; ?>							
+									<!-- / msgs -->
+
+									<!-- errors --> 
+									<?php if ( validation_errors() ) { ?> 
+										<div class="alert alert-danger alert-dismissible fade show" role="alert">
+											<?php echo validation_errors(); ?>
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+									<?php } ?>
+
+                                    <form class="user" action="<?php echo site_url( 'user/login' ); ?>" method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="email" name="email" class="form-control form-control-user" id="inputEmail" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-user"
+                                                id="inputPassword" placeholder="Ingrese su contraseña">
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div> -->
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+          
+										<button type="submit" class="btn btn-primary btn-user btn-block">Ingresar</button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.html">Olvidaste tu contraseña?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a class="small" href="register.html">Crear Cuenta</a>
                                     </div>
                                 </div>
                             </div>

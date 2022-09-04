@@ -126,17 +126,32 @@
 
 			<div class="form-row pb-2">
 				<div class="col-3">
-					<label for="business_name">Razón Social</label>
+					<label for="business_name">Razón Social<sup>*</sup></label>
 					<input type="text" id="business_name" class="form-control">
 				</div>
 				<div class="col">
-					<label for="rnc">RNC</label>
+					<label for="rnc">RNC<sup>*</sup></label>
 					<input type="text" id="rnc" class="form-control">
 				</div>
 				<div class="col-6">
-					<label for="company">Nombre Comercial</label>
+					<label for="company">Nombre Comercial<sup>*</sup></label>
 					<input type="text" id="company" class="form-control">
 				</div>				
+			</div>
+
+			<div class="form-row pb-2">
+				<div class="col-3">
+					<label for="company_phone">Télefono de la empresa<sup>*</sup></label>
+					<input type="text" id="company_phone" class="form-control">
+				</div>
+				<div class="col">
+					<label for="company_address">Dirección de la empresa<sup>*</sup></label>
+					<input type="text" id="company_address" class="form-control">
+				</div>				
+			</div>
+
+			<div class="form-row mt-2">
+				<small>* Datos opcionales</small>
 			</div>
 
 			<div class="form-row mt-4 mb-2">
