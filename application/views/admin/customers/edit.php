@@ -24,15 +24,15 @@
 			<div class="form-row pb-2">
 				<div class="col-3">
 					<label for="document_id">Documento de Identidad <sup class="text-danger">*</sup></label>
-					<input type="text" id="document_id" name="document_id" class="form-control" value="">
+					<input type="text" id="document_id" name="document_id" class="form-control" value="<?php echo set_value('document_id', $this->input->post('document_id') ? $this->input->post('document_id') : $customer->document_id ); ?>">
 				</div>
 				<div class="col">
 					<label for="first_name">Nombre <sup class="text-danger">*</sup></label>
-					<input type="text" id="first_name" name="first_name" class="form-control" value="">
+					<input type="text" id="first_name" name="first_name" class="form-control" value="<?php echo set_value('first_name', $this->input->post('first_name') ? $this->input->post('first_name') : $customer->first_name ); ?>">
 				</div>
 				<div class="col">
 					<label for="last_name">Apellidos <sup class="text-danger">*</sup></label>
-					<input type="text" id="last_name" name="last_name" class="form-control" value="">
+					<input type="text" id="last_name" name="last_name" class="form-control" value="<?php echo set_value('last_name', $this->input->post('last_name') ? $this->input->post('last_name') : $customer->last_name ); ?>">>
 				</div>				
 			</div>
 
@@ -40,9 +40,12 @@
 				<div class="col-4">
 					<label for="gender">Género</label>
 					<select id="gender" name="gender" class="form-control">
-						<option value="no especificado">No especificado</option>
-						<option value="masculino">Masculino</option>
-						<option value="femenino">Femenino</option>
+						<?php if ( $customer->gender == 'none' ) : ?>
+							<option value="" selected>Seleccione</option>
+						<?php endif ?>
+						<option value="masculino" <?php if ($customer->gender == 'masculino') echo "selected" ?>>Masculino</option>
+						<option value="femenino" <?php if ($customer->gender == 'femenino') echo "selected" ?>>Femenino</option>
+						<option value="no especificado" <?php if ($customer->gender == 'no especificado') echo "selected" ?>>No especificado</option>
 					</select>
 				</div>
 				<div class="col-4">
@@ -75,9 +78,9 @@
 				<div class="col">
 					<label for="state_id">Provincia o Estado <sup class="text-danger">*</sup></label>
 					<select id="state_id" name="state_id" class="form-control">
-						<option>Selecciona...</option>
+						<!-- <option>Selecciona...</option>
 						<option value="0101">Distrito Nacional</option>
-						<option value="0102">Santo Domingo</option>
+						<option value="0102">Santo Domingo</option> -->
 					</select>
 				</div>
 				<!-- /state -->
@@ -85,9 +88,9 @@
 				<div class="col">
 					<label for="city_id">Ciudad o Municipio <sup class="text-danger">*</sup></label>
 					<select id="city_id" name="city_id" class="form-control">
-						<option>Selecciona...</option>
+						<!-- <option>Selecciona...</option>
 						<option value="010101">Santo Domingo de Guzmán</option>
-						<option value="010102">Las Yayas</option>
+						<option value="010102">Las Yayas</option> -->
 					</select>
 				</div>
 				<!-- /city -->

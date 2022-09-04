@@ -69,4 +69,14 @@ class Customers extends CI_Controller {
 		$data['subview'] = 'admin/customers/edit';
 		$this->load->view( 'admin/_main_layout', $data );
 	}
+
+	public function ajax_getStates( $country_id )
+	{
+		echo $this->customers_m->get_states( $country_id );
+	}
+
+	public function ajax_getCities( $state_id )
+	{
+		echo $this->customers_m->get_cities( $state_id );
+	}
 }
