@@ -44,6 +44,8 @@ class Customers extends CI_Controller {
 
 		}
 
+		$data['countries'] = $this->customers_m->get_countries();
+
 		$rules = $this->customers_m->customer_rules;
 
 		$this->form_validation->set_rules( $rules );

@@ -105,4 +105,9 @@ class Customers_m extends MY_Model {
 		return $customer;
 
 	}
+
+	public function get_countries()
+	{
+		return $this->db->get( 'countries' )->result();
+	}
 }

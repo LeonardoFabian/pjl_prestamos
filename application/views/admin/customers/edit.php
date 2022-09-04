@@ -62,9 +62,12 @@
 				<div class="col">
 					<label for="country_id">País <sup class="text-danger">*</sup></label>
 					<select id="country_id" name="country_id" class="form-control">
-						<option>Selecciona...</option>
-						<option value="01">República Dominicana</option>
-						<option value="02">Estados Unidos</option>
+						<?php if ( $customer->country_id == 0 ) : ?>
+							<option value="" selected>Selecciona...</option>
+						<?php endif ?>
+						<?php foreach( $countries as $country ) : ?>
+							<option value="<?php echo $country->id ?>" <?php if ( $country->id == $customer->country_id ) echo "selected" ?> ><?php echo $country->name ?></option>
+						<?php endforeach ?>
 					</select>
 				</div>
 				<!-- /country -->
