@@ -59,7 +59,7 @@ CREATE TABLE `customers` (
   `document_id` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `first_name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `last_name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `gender` enum('masculino','femenino','','') COLLATE utf8_spanish_ci DEFAULT NULL,
+  `gender` enum('masculino','femenino','no especificado','') COLLATE utf8_spanish_ci DEFAULT NULL,
 	`birthday` date NOT NULL,
   `country_id` int(11) DEFAULT NULL,
   `state_id` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -77,7 +77,8 @@ CREATE TABLE `customers` (
   `company_address` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   `loan_status` int(11) NOT NULL DEFAULT 0,
 	`created_at` timestamp,
-	`uupdated_at` datetime DEFAULT NULL
+	`updated_at` datetime DEFAULT NULL,
+	UNIQUE (document_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -272,7 +273,8 @@ CREATE TABLE `users` (
   `first_name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `last_name` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `password` varchar(250) COLLATE utf8_spanish_ci NOT NULL
+  `password` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
+	UNIQUE (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --

@@ -8,8 +8,12 @@ class Customers extends CI_Controller {
 	{
 		parent::__construct();
 
+		$this->load->model( 'customers_m' );
+
 		// form library
 		$this->load->library('form_validation');
+
+		$this->load->library( 'session' );
 	}
 
 	/**
@@ -19,6 +23,7 @@ class Customers extends CI_Controller {
 	 */
 	public function index() 
 	{
+		$data['customers'] = $this->customers_m->get();
 		$data['subview'] = 'admin/customers/index';
 		$this->load->view( 'admin/_main_layout', $data );
 	}
