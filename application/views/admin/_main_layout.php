@@ -112,11 +112,13 @@
 
 	<script>
 		$(document).ready(function() {
-			$('.dataTable').DataTable();
+			$('.dataTable').DataTable({
+				"order": [],
+			});
 		});
 	</script>
 
-    <script type="text/javascript">base_url = '<?php base_url(); ?>'</script>
+	<script type="text/javascript">base_url = '<?= base_url();?>'</script>
     <script src="<?php echo site_url(); ?>assets/js/script.js"></script>
 
 </body>

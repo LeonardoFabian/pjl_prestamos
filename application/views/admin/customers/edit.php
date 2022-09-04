@@ -78,9 +78,13 @@
 				<div class="col">
 					<label for="state_id">Provincia o Estado <sup class="text-danger">*</sup></label>
 					<select id="state_id" name="state_id" class="form-control">
-						<!-- <option>Selecciona...</option>
-						<option value="0101">Distrito Nacional</option>
-						<option value="0102">Santo Domingo</option> -->
+						<?php if ( $customer->state_id == 0 ) : ?>
+							<option value="" selected>Selecciona</option>
+						<?php else : ?>
+							<?php foreach ( $states as $state ) : ?>
+								<option value="<?php echo $state->id ?>" <?php if($state->id == $customer->state_id) echo "selected" ?> ><?php echo $state->name ?></option>
+							<?php endforeach ?>
+						<?php endif ?>
 					</select>
 				</div>
 				<!-- /state -->
@@ -88,9 +92,13 @@
 				<div class="col">
 					<label for="city_id">Ciudad o Municipio <sup class="text-danger">*</sup></label>
 					<select id="city_id" name="city_id" class="form-control">
-						<!-- <option>Selecciona...</option>
-						<option value="010101">Santo Domingo de Guzmán</option>
-						<option value="010102">Las Yayas</option> -->
+						<?php if ( $customer->city_id == 0 ) : ?>
+							<option value="" selected>Selecciona</option>
+						<?php else : ?>  
+							<?php foreach ( $cities as $city ) : ?>
+								<option value="<?php echo $city->id ?>" <?php if ( $city->id == $customer->city_id ) echo "selected" ?> ><?php echo $city->name ?></option>
+							<?php endforeach ?>
+						<?php endif ?>
 					</select>
 				</div>
 				<!-- /city -->

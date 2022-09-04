@@ -37,6 +37,8 @@ class Customers extends CI_Controller {
 		if ( $id ) {
 
 			$data['customer'] = $this->customers_m->get( $id );
+			$data['states'] = $this->customers_m->get_editStates( $data['customer']->country_id );
+			$data['cities'] = $this->customers_m->get_editCities( $data['customer']->state_id );
 
 		} else {
 

@@ -111,11 +111,23 @@ class Customers_m extends MY_Model {
 		return $this->db->get( 'countries' )->result();
 	}
 
+	public function get_editStates( $country_id )
+	{
+		$this->db->where( 'country_id', $country_id );
+		return $this->db->get( 'states' )->result();
+	}
+
+	public function get_editCities( $state_id )
+	{
+		$this->db->where( 'state_id', $state_id );
+		return $this->db->get( 'cities' )->result(); 
+	}
+
 	public function get_states( $country_id ) 
 	{
 		$this->db->where( 'country_id', $country_id );
 
-		$query = $this->db-get( 'states' );
+		$query = $this->db->get( 'states' );
 		$outputStates = '<option value="0">Selecciona...</option>';
 
 		foreach( $query->result() as $state ) {
