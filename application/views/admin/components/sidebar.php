@@ -24,15 +24,25 @@
 	<!-- Nav Item - Customers -->
 	<li class="nav-item">
 		<a class="nav-link" href="<?php echo site_url( 'admin/customers' ); ?>">
-			<i class="fas fa-fw fa-users"></i>
-			<span>Clientes</span></a>
+			<i class="fas fa-lg fa-users"></i>
+			<span>Clientes</span>
+		</a>
 	</li>
 
 	<!-- Nav Item - Coins -->
 	<li class="nav-item">
 		<a class="nav-link" href="<?php echo site_url( 'admin/coins' ); ?>">
-			<i class="fas fa-fw fa-coins"></i>
-			<span>Monedas</span></a>
+			<i class="fas fa-lg fa-coins"></i>
+			<span>Monedas</span>
+		</a>
+	</li>
+
+	<!-- Nav Item - Loans -->
+	<li class="nav-item">
+		<a class="nav-link" href="<?php echo site_url( 'admin/loans' ); ?>">
+			<i class="far fa-money-bill-alt"></i>
+			<span>Prestamos</span>
+		</a>
 	</li>
 
 	<!-- Heading -->
