@@ -35,7 +35,17 @@ class Loans extends CI_Controller {
 		}
 
 		$data['subview'] = 'admin/loans/edit';
-		
+
 		$this->load->view( 'admin/_main_layout', $data );
+	}
+
+	function ajax_searchCustomer()
+	{
+		
+		$documentId = $this->input->post('document_id');
+		$customer = $this->loans_m->get_searchCustomer( $documentId );
+
+		echo json_encode( $customer );
+
 	}
 }

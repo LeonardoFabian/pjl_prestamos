@@ -19,7 +19,7 @@
 
 			<div class="form-row pb-4">
 				<div class="col-8">
-					<label for="name">Consultar Documento de Identidad</label>
+					<label for="name">Buscar Documento de Identidad</label>
 					<div class="input-group">
 						<input type="text" id="document_id" class="form-control" value="" placeholder="Ej.: 00100000002">
 						<input type="hidden" name="customer_id" id="customer_id">
@@ -38,12 +38,12 @@
 
 			<div class="form-row pb-2">
 				<div class="col-4">
-					<label for="document_id">Documento de Identidad</label>
-					<input type="text" id="cst_document_id" class="form-control" disabled>
+					<label for="customer_document_id">Documento de Identidad</label>
+					<input type="text" id="customer_document_id" class="form-control" value="" disabled>
 				</div>
 				<div class="col-4">
-					<label for="cst_name">Nombre</label>
-					<input type="text" id="cst_name" class="form-control" disabled>
+					<label for="customer_name">Nombre</label>
+					<input type="text" id="customer_name" class="form-control text-uppercase" value="" disabled>
 				</div>
 			</div>
 
@@ -97,7 +97,7 @@
 
 			<div class="form-row mt-4 pb-4">
 				<div class="col-12 text-center">
-					<button type="button" class="btn btn-success" id="calc-loan">Calcular</button>
+					<button type="button" class="btn btn-success" id="calc-loan">Calcular Préstamo</button>
 				</div>
 			</div>		
 

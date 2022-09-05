@@ -39,4 +39,10 @@ class Loans_m extends MY_Model {
 	{
 		return $this->db->get( 'coins' )->result();
 	}
+
+	public function get_searchCustomer( $documentId ) 
+	{
+		$this->db->where( 'document_id', $documentId );
+		return $this->db->get( 'customers' )->row();
+	}
 }
