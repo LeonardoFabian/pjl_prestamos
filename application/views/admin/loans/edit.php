@@ -90,8 +90,8 @@
 
 			<div class="form-row pb-2">
 				<div class="col-3">
-					<label for="date">Fecha de emisión</label>
-					<input type="date" id="date" name="date" class="form-control">
+					<label for="issue_date">Fecha de emisión</label>
+					<input type="date" id="issue_date" name="date" class="form-control">
 				</div>
 			</div>			
 
