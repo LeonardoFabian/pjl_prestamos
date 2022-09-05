@@ -34,6 +34,7 @@ USE `pjl_prestamos`;
 CREATE TABLE `coins` (
   `id` int(11) NOT NULL,
   `name` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `singular_name` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `short_name` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `symbol` varchar(11) COLLATE utf8_spanish_ci NOT NULL,
   `description` varchar(70) COLLATE utf8_spanish_ci DEFAULT NULL
@@ -43,10 +44,10 @@ CREATE TABLE `coins` (
 -- Volcado de datos para la tabla `coins`
 --
 
-INSERT INTO `coins` (`id`, `name`, `short_name`, `symbol`, `description`) VALUES
-(1, 'pesos', 'dop', 'RD$', 'Peso dominicano'),
-(2, 'dolar', 'usd', '$', 'Dolar estadounidense'),
-(3, 'euros', 'eu', 'e', 'Moneda europea');
+INSERT INTO `coins` (`id`, `name`, `singular_name`, `short_name`, `symbol`, `description`) VALUES
+(1, 'Pesos', 'Peso', 'DOP', 'RD$', 'Peso dominicano'),
+(2, 'Dólares', 'Dólar', 'USD', '$', 'Dólar estadounidense'),
+(3, 'Euros', 'Euro', 'EUR', '€', 'Moneda europea');
 
 -- --------------------------------------------------------
 
@@ -240,7 +241,57 @@ INSERT INTO `cities` (`id`, `name`, `state_id`, `country_id`) VALUES
 ('010606', 'Las Guáranas', '0106', '01'),
 ('010607', 'Eugenio María de Hostos', '0106', '01'),
 ('010701', 'Comendador', '0107', '01'),
-('010702', 'Bánica', '0107', '01');
+('010702', 'Bánica', '0107', '01'),
+('010703', 'El Llano', '0107', '01'),
+('010704', 'Hondo Valle', '0107', '01'),
+('010705', 'Pedro Santana', '0107', '01'),
+('010706', 'Juan Santiago', '0107', '01'),
+('010801', 'El Seibo', '0108', '01'),
+('010802', 'Miches', '0108', '01'),
+('010901', 'Moca', '0109', '01'),
+('010902', 'Cayetano Germosén', '0109', '01'),
+('010903', 'Gaspar Hernández', '0109', '01'),
+('010904', 'Jamao al Norte', '0109', '01'),
+('010905', 'San Víctor', '0109', '01'),
+('011001', 'Jimaní', '0110', '01'),
+('011002', 'Duvergé', '0110', '01'),
+('011003', 'La Descubierta', '0110', '01'),
+('011004', 'Postrer Río', '0110', '01'),
+('011005', 'Cristóbal', '0110', '01'),
+('011006', 'Mella', '0110', '01'),
+('011101', 'Higüey', '0111', '01'),
+('011102', 'San Rafael del Yuma', '0111', '01'),
+('011201', 'La Romana', '0112', '01'),
+('011202', 'Guaymate', '0112', '01'),
+('011203', 'Villa Hermosa', '0112', '01'),
+('011301', 'La Vega', '0113', '01'),
+('011302', 'Constanza', '0113', '01'),
+('011303', 'Jarabacoa', '0113', '01'),
+('011304', 'Jima Abajo', '0113', '01'),
+('011401', 'Nagua', '0114', '01'),
+('011402', 'Cabrera', '0114', '01'),
+('011403', 'El Factor', '0114', '01'),
+('011404', 'Río San Juan', '0114', '01'),
+('011501', 'Monte Cristi', '0115', '01'),
+('011502', 'Castañuelas', '0115', '01'),
+('011503', 'Guayubín', '0115', '01'),
+('011504', 'Las Matas de Santa Cruz', '0115', '01'),
+('011505', 'Pepillo Salcedo (Manzanillo)', '0115', '01'),
+('011506', 'Villa Vásquez', '0115', '01'),
+('011601', 'Pedernales', '0116', '01'),
+('011602', 'Oviedo', '0116', '01'),
+('011701', 'Baní', '0117', '01'),
+('011702', 'Nizao', '0117', '01'),
+('011703', 'Matanzas', '0117', '01'),
+('011801', 'Puerto Plata', '0118', '01'),
+('011802', 'Altamira', '0118', '01'),
+('011803', 'Guananico', '0118', '01'),
+('011804', 'Imbert', '0118', '01'),
+('011805', 'Los Hidalgos', '0118', '01'),
+('011806', 'Luperón', '0118', '01'),
+('011807', 'Sosúa', '0118', '01'),
+('011808', 'Villa Isabela', '0118', '01'),
+('011809', 'Villa Montellano', '0118', '01');
 
 -- --------------------------------------------------------
 

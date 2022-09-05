@@ -1,6 +1,6 @@
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-		Nuevo Cliente
+		<?php echo empty( $customer->document_id ) ? 'Nuevo Cliente' : 'Editar Cliente'; ?>
 	</div>
 	<!-- card-body -->
 	<div class="card-body">
@@ -32,7 +32,7 @@
 				</div>
 				<div class="col">
 					<label for="last_name">Apellidos <sup class="text-danger">*</sup></label>
-					<input type="text" id="last_name" name="last_name" class="form-control" value="<?php echo set_value('last_name', $this->input->post('last_name') ? $this->input->post('last_name') : $customer->last_name ); ?>">>
+					<input type="text" id="last_name" name="last_name" class="form-control" value="<?php echo set_value('last_name', $this->input->post('last_name') ? $this->input->post('last_name') : $customer->last_name ); ?>">
 				</div>				
 			</div>
 
