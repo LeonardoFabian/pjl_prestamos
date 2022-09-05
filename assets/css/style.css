@@ -1,3 +1,8 @@
 .alert-danger p {
 	margin-bottom: 0.2rem;
 }
+
+.calc-loan-info {
+	background-color: #d2f4e8;
+	color: #0f6848;
+}

@@ -54,11 +54,11 @@
 							<td><?php echo $loan->credit_amount ?></td>
 							<td>
 								<?php 
-									$interest = number_format($loan->credit_amount * ($loan->interest_amount/100), 2);
-									echo $interest;
+									$interest_t = number_format($loan->credit_amount * ($loan->interest_amount/100), 2);
+									echo $interest_t;
 								?>
 							</td>
-							<td><?php echo $loan->credit_amount + $interest ?></td>
+							<td><?php echo $loan->credit_amount + $interest_t; ?></td>
 							<td><?php echo $loan->short_name ?></td>
 							<td>
 								<button type="button" class="btn btn-sm <?php echo $loan->status ? 'btn-outline-danger' : 'btn-outline-success' ?> status-check"><?php echo $loan->status ? 'Pendiente' : 'Pagado' ?></button>	

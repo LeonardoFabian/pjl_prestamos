@@ -30,7 +30,40 @@ class Loans extends CI_Controller {
 
 		if ( $this->form_validation->run() == TRUE ) {
 
+			if ( $this->input->post('payment_m') == 'diario' )
+				$p = 'P1D';
+			if ( $this->input->post('payment_m') == 'semanal' )
+				$p = 'P7D';
+			if ( $this->input->post('payment_m') == 'quincenal' )
+				$p = 'P15D';
+			if ( $this->input->post('payment_m') == 'mensual' )
+				$p = 'P1M';
 
+			$period = new DatePeriod(
+				new DateTime( $this->input->post('date') ),
+				new DateInterval( $p ),
+				$this->input->post('num_fee'),
+				DatePeriod::EXCLUDE_START_DATE
+			);
+
+			$fee_number = 1;
+
+			foreach ( $period as $date ) {
+
+				$items[] = array(
+					'date' => $date->format('Y-m-d'),
+					'num_quota' => $fee_number++,
+					'fee_amount' => $this->input->post('fee_amount')
+				);
+			}
+
+			$loan_data = $this->loans_m->array_from_post(['customer_id', 'credit_amount', 'interest_amount', 'num_fee', 'fee_amount', 'payment_m', 'coin_id', 'date']);
+
+			if ( $this->loans_m->add_loan( $loan_data, $items ) ) {
+
+				$this->session->set_flashdata( 'msg', 'Prestamo registrado correctamente' );
+				
+			}
 
 		}
 

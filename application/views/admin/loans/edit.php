@@ -101,7 +101,7 @@
 				</div>
 			</div>		
 
-			<div class="form-row py-5 px-4 bg-light">
+			<div class="calc-loan-info form-row py-5 px-4" style="background-color: #d2f4e8;">
 				<div class="col">
 					<label for="fee_amount">Cuota</label>
 					<input type="text" id="fee_amount" name="fee_amount" class="form-control" readonly>

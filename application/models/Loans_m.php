@@ -45,4 +45,28 @@ class Loans_m extends MY_Model {
 		$this->db->where( 'document_id', $documentId );
 		return $this->db->get( 'customers' )->row();
 	}
+
+	public function add_loan( $data, $items ) {
+
+		if( $this->db->insert( 'loans', $data ) ) {
+
+			$loan_id = $this->db->insert_id();
+
+			$this->db->where( 'id', $data['customer_id'] );
+			$this->db->update( 'customers', ['loan_status' => 1] );
+
+			foreach( $items as $item ) {
+
+				$item['loan_id'] = $loan_id;
+				$this->db->insert( 'loan_items', $item );
+
+			}
+
+			return true;
+
+		}
+
+		return false;
+		
+	}
 }
