@@ -62,7 +62,7 @@ class Loans extends CI_Controller {
 			if ( $this->loans_m->add_loan( $loan_data, $items ) ) {
 
 				$this->session->set_flashdata( 'msg', 'Prestamo registrado correctamente' );
-				
+
 			}
 
 		}
@@ -80,5 +80,13 @@ class Loans extends CI_Controller {
 
 		echo json_encode( $customer );
 
+	}
+
+	function view( $id ) 
+	{
+		$data['loan'] = $this->loans_m->get_loan( $id );
+		$data['items'] = $this->loans_m->get_loanItems( $id );
+
+		$this->load->view( 'admin/loans/view', $data );
 	}
 }

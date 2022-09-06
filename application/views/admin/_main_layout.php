@@ -23,6 +23,8 @@
 	<!-- Custom styles for this page -->
     <link href="<?php echo site_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+	<link href="<?php echo site_url(); ?>assets/css/style.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">

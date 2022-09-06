@@ -24,7 +24,7 @@
 			<table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0">
 				<thead>
 					<tr>
-						<th>Préstamo</th>
+						<th>Nº</th>
 						<th>Cliente</th>
 						<th>Monto</th>
 						<th>Interés</th>
@@ -36,7 +36,7 @@
 				</thead>
 				<tfoot>
 					<tr>
-						<th>Préstamo</th>
+						<th>Nº</th>
 						<th>Cliente</th>
 						<th>Monto</th>
 						<th>Interés</th>
@@ -50,15 +50,25 @@
 					<?php if ( count( $loans ) ) : foreach( $loans as $loan ) : ?>
 						<tr>
 							<td><?php echo $loan->id ?></td>
-							<td><?php echo $loan->customer ?></td>
-							<td><?php echo $loan->credit_amount ?></td>
+							<td class="text-uppercase"><?php echo $loan->customer ?></td>
 							<td>
 								<?php 
-									$interest_t = number_format($loan->credit_amount * ($loan->interest_amount/100), 2);
-									echo $interest_t;
+									$floatCreditAmount = floatval($loan->credit_amount);
+									echo $loan->symbol . number_format($floatCreditAmount, 2); 
 								?>
 							</td>
-							<td><?php echo $loan->credit_amount + $interest_t; ?></td>
+							<td>
+								<?php 
+									$interest = $floatCreditAmount * (floatval($loan->interest_amount)/100);
+									echo $loan->symbol . number_format($interest, 2);
+								?>
+							</td>
+							<td>
+								<?php 
+									$total = floatval($loan->credit_amount) + floatval($interest); 
+									echo $loan->symbol . number_format($total, 2);
+								?>
+							</td>
 							<td><?php echo $loan->short_name ?></td>
 							<td>
 								<button type="button" class="btn btn-sm <?php echo $loan->status ? 'btn-outline-danger' : 'btn-outline-success' ?> status-check"><?php echo $loan->status ? 'Pendiente' : 'Pagado' ?></button>	
@@ -81,4 +91,6 @@
 			</table>
 		</div>
 	</div>
-	</div>
+</div>
+
+<div class="modal fade" id="customerInfoModal" data-keyboard="false" tabindex="-1" aria-labelledby="staticModalTitle" aria-hidden="true"></div>

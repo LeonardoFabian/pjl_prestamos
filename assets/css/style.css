@@ -6,3 +6,15 @@
 	background-color: #d2f4e8;
 	color: #0f6848;
 }
+
+@media print {
+
+	body.modal-open {
+		visibility: hidden;
+	}
+
+	body.modal-open .modal .modal-header,
+	body.modal-open .modal .modal-body {
+		visibility: visible;
+	}
+}

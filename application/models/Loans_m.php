@@ -24,6 +24,7 @@ class Loans_m extends MY_Model {
 			l.credit_amount, 
 			l.interest_amount, 
 			co.short_name,
+			co.symbol,
 			l.status"
 		);
 		$this->db->from( 'loans l' );
@@ -46,7 +47,8 @@ class Loans_m extends MY_Model {
 		return $this->db->get( 'customers' )->row();
 	}
 
-	public function add_loan( $data, $items ) {
+	public function add_loan( $data, $items ) 
+	{
 
 		if( $this->db->insert( 'loans', $data ) ) {
 
@@ -67,6 +69,30 @@ class Loans_m extends MY_Model {
 		}
 
 		return false;
-		
+
+	}
+
+	public function get_loan( $loan_id ) 
+	{
+		$this->db->select(
+			"l.*,
+			c.document_id,
+			CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+			co.short_name,
+			co.symbol"
+		);
+		$this->db->from( 'loans l' );
+		$this->db->join( 'customers c', 'c.id = l.customer_id', 'left' );
+		$this->db->join( 'coins co', 'co.id = l.coin_id', 'left' );
+		$this->db->where( 'l.id', $loan_id );
+
+		return $this->db->get()->row();
+	}
+
+	public function get_loanItems( $loan_id ) 
+	{
+		$this->db->where( 'loan_id', $loan_id );
+
+		return $this->db->get( 'loan_items' )->result();
 	}
 }

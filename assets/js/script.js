@@ -139,12 +139,24 @@ $(document).ready(function() {
 
 	});
 
+	// prevent no customer selected
 	$("#loan_form").submit( function() {
 		if( $("#customer_id").val() == "" ) {
 			alert("Debe seleccionar un cliente para realizar un préstamo" );
 			return false;
 		}
+	});
+
+	$(document).on("click", '[data-toggle="ajax-modal"]', function(t) {
+		t.preventDefault();
+
+		var url = $(this).attr("href");
+
+		$.get(url).done(function (view) {
+			$("#customerInfoModal").html(view).modal({ backdrop: "static"});
+		})
 	})
+
 
 });
 

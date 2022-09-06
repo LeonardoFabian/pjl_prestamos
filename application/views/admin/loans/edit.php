@@ -17,10 +17,10 @@
 
 		<?php echo form_open( 'admin/loans/edit', 'id="loan_form"' ); ?>
 
-			<div class="form-row pb-4">
-				<div class="col-8">
-					<label for="name">Buscar Documento de Identidad</label>
-					<div class="input-group">
+			<div class="form-row mt-4 mb-4 text-center">
+				<div class="col-4 m-auto">
+					<label for="name"><i class="fas fa-id-card fa-lg mr-2"></i>Consultar Documento de Identidad</label>
+					<div class="input-group">						
 						<input type="text" id="document_id" class="form-control" value="" placeholder="Ej.: 00100000002">
 						<input type="hidden" name="customer_id" id="customer_id">
 						<div class="input-group-append">
@@ -101,7 +101,7 @@
 				</div>
 			</div>		
 
-			<div class="calc-loan-info form-row py-5 px-4" style="background-color: #d2f4e8;">
+			<div class="calc-loan-info form-row py-5 px-4">
 				<div class="col">
 					<label for="fee_amount">Cuota</label>
 					<input type="text" id="fee_amount" name="fee_amount" class="form-control" readonly>
