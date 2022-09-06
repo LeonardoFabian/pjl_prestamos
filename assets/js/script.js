@@ -147,6 +147,7 @@ $(document).ready(function() {
 		}
 	});
 
+	// get view to show in modal
 	$(document).on("click", '[data-toggle="ajax-modal"]', function(t) {
 		t.preventDefault();
 
@@ -155,7 +156,97 @@ $(document).ready(function() {
 		$.get(url).done(function (view) {
 			$("#customerInfoModal").html(view).modal({ backdrop: "static"});
 		})
-	})
+	});
+
+	// payment callback
+	var callback_payment = function() {
+
+		var dni = $("#dni").val();
+
+		if ( dni == "" ) {
+
+			alert("Ingrese un documento de identidad")
+			return false 
+
+		} else {
+
+			$.post( base_url + "admin/payments/ajax_searchCustomer", {dni: dni}, function(data) {
+
+				console.log('sin parse', data)
+
+				data = JSON.parse(data);
+
+				console.log('con parse', data )
+
+				if ( data.customer == null ) {
+
+					$("#dni").val('');
+					$("#customer_document_id").val('');
+					$("#customer_name").val('');
+					$("#credit_amount").val('');
+					$("#payment_m").val('');
+					$("#coin").val('');
+
+					alert("Cliente no existe o no tiene préstamo registrado.");
+					$("#quotas").html('');
+					$("#quotas").dataTable().fnDestroy();
+
+				} else {
+
+					$("#dni").val('');
+					$("#customer_document_id").val(data.customer.document_id);
+					$("#customer_name").val(data.customer.client_name);
+					$("#credit_amount").val(data.customer.credit_amount);
+					$("#payment_m").val(data.customer.payment_m);
+					$("#coin").val(data.customer.coin_name);
+
+					$("#quotas").dataTable().fnDestroy();
+
+					$("#quotas").dataTable({
+
+						"bPaginate": false,
+						"scrollY": '50vh',
+						"scrollCollapse": true,
+						"aaData": data[0],
+					})
+
+					$('input:checkbox').on('change', function() {
+
+						var total = 0;
+
+						$('input:checkbox:enabled:checked').each( function() {
+
+							total += isNaN(parseFloat($(this).attr('data-fee'))) ? 0 : parseFloat($(this).attr('data-fee'));
+
+						});
+
+						$("#total_amount").val(total);
+
+						if ( total != 0 ) {
+
+							$("#register_loan").attr( 'disabled', false );
+
+						} else {
+
+							$("#register_loan").attr('disabled', true );
+
+						}
+					});
+
+				}
+
+			})
+		}
+	}
+
+	// execute payment when enter pressed or search clicked
+	$("#dni").keypress( function(e) {
+
+		if ( e.which == 13 ) callback_payment();
+
+	});
+
+	$("#search-client").click( callback_payment );
 
 
 });
