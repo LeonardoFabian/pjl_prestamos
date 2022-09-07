@@ -4,7 +4,7 @@
 		<h6 class="m-0 font-weight-bold text-primary">Monedas</h6>
 		<!-- add customer button -->
 		<a class="d-sm-inline-block btn btn-primary" href="<?php echo site_url('admin/coins/edit'); ?>">
-			<i class="fas user-plus pr-2"></i>Nueva moneda
+		<i class="fas fa-plus-circle pr-2"></i>Nueva moneda
 		</a>
 	</div>
 	<div class="card-body">
@@ -59,8 +59,7 @@
 					<?php endforeach; else : ?>		
 						<tr>
 							<td colspan="8" class="text-center">
-								No existen monedas registradas en el sistema, favor añadir una 
-								<a class="d-sm-inline-block btn btn-primary" href="<?php echo site_url('admin/coins/edit'); ?>">nueva moneda</a>
+								No existen monedas registradas en el sistema, favor añadir una <a href="<?php echo site_url('admin/coins/edit'); ?>">Nueva Moneda</a>
 							</td>
 						</tr>
 					<?php endif; ?>
@@ -68,4 +67,7 @@
 			</table>
 		</div>
 	</div>
-	</div>
+</div>
+
+<!-- Floating Action Button -->	
+<?php $this->load->view( 'admin/components/fab' ); ?>

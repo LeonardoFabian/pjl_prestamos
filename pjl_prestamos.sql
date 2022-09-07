@@ -47,7 +47,8 @@ CREATE TABLE `coins` (
 INSERT INTO `coins` (`id`, `name`, `singular_name`, `short_name`, `symbol`, `description`) VALUES
 (1, 'Pesos', 'Peso', 'DOP', 'RD$', 'Peso dominicano'),
 (2, 'Dólares', 'Dólar', 'USD', '$', 'Dólar estadounidense'),
-(3, 'Euros', 'Euro', 'EUR', '€', 'Moneda europea');
+(3, 'Euros', 'Euro', 'EUR', '€', 'Moneda europea'),
+(4, 'Yen', 'Yen', 'JPY', '¥', 'Yen japonés');
 
 -- --------------------------------------------------------
 
@@ -86,13 +87,13 @@ CREATE TABLE `customers` (
 -- Volcado de datos para la tabla `customers`
 --
 
-INSERT INTO `customers` (`id`, `document_id`, `first_name`, `last_name`, `gender`, `birthday`, `country_id`, `state_id`, `city_id`, `address`, `apto`, `floor`, `mobile`, `phone`, `email`, `business_name`, `rnc`, `company`, `company_phone`, `company_address`, `loan_status`) VALUES
-(8, '12345678', 'maria', 'chavez', 'masculino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo1@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 0),
-(9, '344555', 'mario', 'flores', 'femenino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo2@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(10, '12344', 'ruben', 'chavez', 'masculino', NULL, 01, '0101', '010101', 'av el incas98', NULL, 0, '', '', 'correo3@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(11, '123451', 'diego', 'arnica', 'masculino', NULL, 01, '0101', '010101', 'mariano cron 45', NULL, 0, '', '', 'correo4@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(12, '7654321', 'matilde', 'frisanc', 'femenino', NULL, 01, '0101', '010101', 'choqwur n455', NULL, 0, '', '', 'correo5@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
-(13, '1223', 'pablo', 'moralesss', 'masculino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo6@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1);
+-- INSERT INTO `customers` (`id`, `document_id`, `first_name`, `last_name`, `gender`, `birthday`, `country_id`, `state_id`, `city_id`, `address`, `apto`, `floor`, `mobile`, `phone`, `email`, `business_name`, `rnc`, `company`, `company_phone`, `company_address`, `loan_status`) VALUES
+-- (8, '12345678', 'maria', 'chavez', 'masculino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo1@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 0),
+-- (9, '344555', 'mario', 'flores', 'femenino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo2@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+-- (10, '12344', 'ruben', 'chavez', 'masculino', NULL, 01, '0101', '010101', 'av el incas98', NULL, 0, '', '', 'correo3@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+-- (11, '123451', 'diego', 'arnica', 'masculino', NULL, 01, '0101', '010101', 'mariano cron 45', NULL, 0, '', '', 'correo4@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+-- (12, '7654321', 'matilde', 'frisanc', 'femenino', NULL, 01, '0101', '010101', 'choqwur n455', NULL, 0, '', '', 'correo5@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1),
+-- (13, '1223', 'pablo', 'moralesss', 'masculino', NULL, 01, '0101', '010101', '', NULL, 0, '', '', 'correo6@email.com', 'MINISTERIO DE TRABAJO', '401-00736-3', '', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -117,12 +118,12 @@ CREATE TABLE `loans` (
 -- Volcado de datos para la tabla `loans`
 --
 
-INSERT INTO `loans` (`id`, `customer_id`, `credit_amount`, `interest_amount`, `num_fee`, `fee_amount`, `payment_m`, `coin_id`, `date`, `status`) VALUES
-(10, 11, '3000.00', '3.00', 4, '772.50', 'mensual', 1, '2021-07-04', b'1'),
-(11, 10, '3000.00', '4.00', 3, '1040.00', 'mensual', 1, '2021-07-18', b'1'),
-(12, 9, '2000.00', '2.00', 3, '680.00', 'mensual', 1, '2021-07-18', b'1'),
-(13, 12, '1000.00', '2.00', 4, '255.00', 'mensual', 2, '2021-07-18', b'1'),
-(14, 13, '4000.00', '3.00', 4, '1030.00', 'mensual', 1, '2021-07-18', b'1');
+-- INSERT INTO `loans` (`id`, `customer_id`, `credit_amount`, `interest_amount`, `num_fee`, `fee_amount`, `payment_m`, `coin_id`, `date`, `status`) VALUES
+-- (10, 11, '3000.00', '3.00', 4, '772.50', 'mensual', 1, '2021-07-04', b'1'),
+-- (11, 10, '3000.00', '4.00', 3, '1040.00', 'mensual', 1, '2021-07-18', b'1'),
+-- (12, 9, '2000.00', '2.00', 3, '680.00', 'mensual', 1, '2021-07-18', b'1'),
+-- (13, 12, '1000.00', '2.00', 4, '255.00', 'mensual', 2, '2021-07-18', b'1'),
+-- (14, 13, '4000.00', '3.00', 4, '1030.00', 'mensual', 1, '2021-07-18', b'1');
 
 -- --------------------------------------------------------
 
@@ -144,25 +145,25 @@ CREATE TABLE `loan_items` (
 -- Volcado de datos para la tabla `loan_items`
 --
 
-INSERT INTO `loan_items` (`id`, `loan_id`, `date`, `num_quota`, `fee_amount`, `pay_date`, `status`) VALUES
-(41, 10, '2021-08-04', 1, '772.50', '2021-07-08 22:40:50', b'0'),
-(42, 10, '2021-09-04', 2, '772.50', '2021-07-08 22:40:50', b'0'),
-(43, 10, '2021-10-04', 3, '772.50', '2021-07-05 01:12:13', b'1'),
-(44, 10, '2021-11-04', 4, '772.50', '2021-07-05 01:12:13', b'1'),
-(45, 11, '2021-08-18', 1, '1040.00', '2021-07-19 00:56:48', b'0'),
-(46, 11, '2021-09-18', 2, '1040.00', '2021-07-19 00:55:17', b'1'),
-(47, 11, '2021-10-18', 3, '1040.00', '2021-07-19 00:55:17', b'1'),
-(48, 12, '2021-08-18', 1, '680.00', '2021-07-19 02:09:52', b'1'),
-(49, 12, '2021-09-18', 2, '680.00', '2021-07-19 02:09:53', b'1'),
-(50, 12, '2021-10-18', 3, '680.00', '2021-07-19 02:09:53', b'1'),
-(51, 13, '2021-08-18', 1, '255.00', '2021-07-19 02:10:53', b'1'),
-(52, 13, '2021-09-18', 2, '255.00', '2021-07-19 02:10:53', b'1'),
-(53, 13, '2021-10-18', 3, '255.00', '2021-07-19 02:10:53', b'1'),
-(54, 13, '2021-11-18', 4, '255.00', '2021-07-19 02:10:53', b'1'),
-(55, 14, '2021-08-18', 1, '1030.00', '2021-07-19 02:26:15', b'0'),
-(56, 14, '2021-09-18', 2, '1030.00', '2021-07-19 02:26:16', b'0'),
-(57, 14, '2021-10-18', 3, '1030.00', '2021-07-19 02:23:32', b'1'),
-(58, 14, '2021-11-18', 4, '1030.00', '2021-07-19 02:23:32', b'1');
+-- INSERT INTO `loan_items` (`id`, `loan_id`, `date`, `num_quota`, `fee_amount`, `pay_date`, `status`) VALUES
+-- (41, 10, '2021-08-04', 1, '772.50', '2021-07-08 22:40:50', b'0'),
+-- (42, 10, '2021-09-04', 2, '772.50', '2021-07-08 22:40:50', b'0'),
+-- (43, 10, '2021-10-04', 3, '772.50', '2021-07-05 01:12:13', b'1'),
+-- (44, 10, '2021-11-04', 4, '772.50', '2021-07-05 01:12:13', b'1'),
+-- (45, 11, '2021-08-18', 1, '1040.00', '2021-07-19 00:56:48', b'0'),
+-- (46, 11, '2021-09-18', 2, '1040.00', '2021-07-19 00:55:17', b'1'),
+-- (47, 11, '2021-10-18', 3, '1040.00', '2021-07-19 00:55:17', b'1'),
+-- (48, 12, '2021-08-18', 1, '680.00', '2021-07-19 02:09:52', b'1'),
+-- (49, 12, '2021-09-18', 2, '680.00', '2021-07-19 02:09:53', b'1'),
+-- (50, 12, '2021-10-18', 3, '680.00', '2021-07-19 02:09:53', b'1'),
+-- (51, 13, '2021-08-18', 1, '255.00', '2021-07-19 02:10:53', b'1'),
+-- (52, 13, '2021-09-18', 2, '255.00', '2021-07-19 02:10:53', b'1'),
+-- (53, 13, '2021-10-18', 3, '255.00', '2021-07-19 02:10:53', b'1'),
+-- (54, 13, '2021-11-18', 4, '255.00', '2021-07-19 02:10:53', b'1'),
+-- (55, 14, '2021-08-18', 1, '1030.00', '2021-07-19 02:26:15', b'0'),
+-- (56, 14, '2021-09-18', 2, '1030.00', '2021-07-19 02:26:16', b'0'),
+-- (57, 14, '2021-10-18', 3, '1030.00', '2021-07-19 02:23:32', b'1'),
+-- (58, 14, '2021-11-18', 4, '1030.00', '2021-07-19 02:23:32', b'1');
 
 -- --------------------------------------------------------
 
@@ -291,7 +292,74 @@ INSERT INTO `cities` (`id`, `name`, `state_id`, `country_id`) VALUES
 ('011806', 'Luperón', '0118', '01'),
 ('011807', 'Sosúa', '0118', '01'),
 ('011808', 'Villa Isabela', '0118', '01'),
-('011809', 'Villa Montellano', '0118', '01');
+('011809', 'Villa Montellano', '0118', '01'),
+('011901', 'Salcedo', '0119', '01'),
+('011902', 'Tenares', '0119', '01'),
+('011903', 'Villa Tapia', '0119', '01'),
+('012001', 'Samaná', '0120', '01'),
+('012002', 'Sánchez', '0120', '01'),
+('012003', 'Las Terrenas', '0120', '01'),
+('012101', 'San Cristóbal', '0121', '01'),
+('012102', 'Sabana Grande de Palenque', '0121', '01'),
+('012103', 'Bajos de Haina', '0121', '01'),
+('012104', 'Cambita Garabitos', '0121', '01'),
+('012105', 'Villa Altagracia', '0121', '01'),
+('012106', 'Yaguate', '0121', '01'),
+('012107', 'San Gregorio de Nigua', '0121', '01'),
+('012108', 'Los Cacaos', '0121', '01'),
+('012201', 'San Juan', '0122', '01'),
+('012202', 'Bohechío', '0122', '01'),
+('012203', 'El Cercado', '0122', '01'),
+('012204', 'Juan de Herrera', '0122', '01'),
+('012205', 'Las Matas de Farfán', '0122', '01'),
+('012206', 'Vallejuelo', '0122', '01'),
+('012301', 'San Pedro de Macorís', '0123', '01'),
+('012302', 'Los Llanos', '0123', '01'),
+('012303', 'Ramón Santana', '0123', '01'),
+('012304', 'Consuelo', '0123', '01'),
+('012305', 'Quisqueya', '0123', '01'),
+('012306', 'Guayacanes', '0123', '01'),
+('012401', 'Cotuí', '0124', '01'),
+('012402', 'Cevicos', '0124', '01'),
+('012403', 'Fantino', '0124', '01'),
+('012404', 'La Mata', '0124', '01'),
+('012501', 'Santiago', '0125', '01'),
+('012502', 'Bisonó', '0125', '01'),
+('012503', 'Jánico', '0125', '01'),
+('012504', 'Licey al Medio', '0125', '01'),
+('012505', 'San José de las Matas', '0125', '01'),
+('012506', 'Tamboril', '0125', '01'),
+('012507', 'Villa González', '0125', '01'),
+('012508', 'Puñal', '0125', '01'),
+('012509', 'Sabana Iglesia', '0125', '01'),
+('012510', 'Baitoa', '0125', '01'),
+('012601', 'San Ignacio de Sabaneta', '0126', '01'),
+('012602', 'Villa Los Almácigos', '0126', '01'),
+('012603', 'Monción', '0126', '01'),
+('012701', 'Mao', '0127', '01'),
+('012702', 'Esperanza', '0127', '01'),
+('012703', 'Laguna Salada', '0127', '01'),
+('012801', 'Bonao', '0128', '01'),
+('012802', 'Maimón', '0128', '01'),
+('012803', 'Piedra Blanca', '0128', '01'),
+('012901', 'Monte Plata', '0129', '01'),
+('012902', 'Bayaguana', '0129', '01'),
+('012903', 'Sabana Grande de Boyá', '0129', '01'),
+('012904', 'Yamasá', '0129', '01'),
+('012905', 'Peralvillo', '0129', '01'),
+('013001', 'Hato Mayor', '0130', '01'),
+('013002', 'Sabana de la Mar', '0130', '01'),
+('013003', 'El Valle', '0130', '01'),
+('013101', 'San José de Ocoa', '0131', '01'),
+('013102', 'Sabana Larga', '0131', '01'),
+('013103', 'Rancho Arriba', '0131', '01'),
+('013201', 'Santo Domingo Este', '0132', '01'),
+('013202', 'Santo Domingo Oeste', '0132', '01'),
+('013203', 'Santo Domingo Norte', '0132', '01'),
+('013204', 'Boca Chica', '0132', '01'),
+('013205', 'San Antonio de Guerra', '0132', '01'),
+('013206', 'Los Alcarrizos', '0132', '01'),
+('013207', 'Pedro Brand', '0132', '01');
 
 -- --------------------------------------------------------
 

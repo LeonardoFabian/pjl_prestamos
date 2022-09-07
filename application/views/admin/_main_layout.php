@@ -25,6 +25,9 @@
 
 	<link href="<?php echo site_url(); ?>assets/css/style.css" rel="stylesheet">
 
+	<!-- FAB CSS -->
+	<link href="<?php echo site_url(); ?>assets/css/fab.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -61,7 +64,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; <a href="http://www.leonardofabian.com/" target="_blank">Leonardo Fabián</a> | <a href="https://www.linkedin.com/in/pascual-sanchez-487300233/" target="_blank">Pascual Sánchez</a> | <a href="" target="_blank">Jacobo Rodríguez</a> <?= date('Y') ?></span>
                     </div>
                 </div>
             </footer>
@@ -72,6 +75,7 @@
 
     </div>
     <!-- End of Page Wrapper -->
+	
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

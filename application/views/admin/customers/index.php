@@ -4,7 +4,7 @@
 		<h6 class="m-0 font-weight-bold text-primary">Clientes</h6>
 		<!-- add customer button -->
 		<a class="d-sm-inline-block btn btn-primary" href="<?php echo site_url('admin/customers/edit'); ?>">
-			<i class="fas user-plus pr-2"></i>Nuevo cliente
+		<i class="fas fa-plus-circle pr-2"></i>Nuevo cliente
 		</a>
 	</div>
 	<div class="card-body">
@@ -67,8 +67,7 @@
 					<?php endforeach; else : ?>		
 						<tr>
 							<td colspan="8" class="text-center">
-								No existen registros de Clientes, favor añadir un 
-								<a class="d-sm-inline-block btn btn-primary" href="<?php echo site_url('admin/customers/edit'); ?>">Nuevo cliente</a>
+								No existen registros de Clientes, favor añadir un <a href="<?php echo site_url('admin/customers/edit'); ?>">Nuevo Cliente</a>
 							</td>
 						</tr>
 					<?php endif; ?>
@@ -76,4 +75,7 @@
 			</table>
 		</div>
 	</div>
-	</div>
+</div>
+
+<!-- Floating Action Button -->	
+<?php $this->load->view( 'admin/components/fab' ); ?>

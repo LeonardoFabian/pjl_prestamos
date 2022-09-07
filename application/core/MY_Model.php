@@ -109,8 +109,8 @@ class MY_Model extends CI_Model {
 	 */
 	public function hash( $string ) 
 	{
-		return hash( 'sha512', $string );
-		// return hash( 'sha512', $string . config_item('encryption_key') );
+		// return hash( 'sha512', $string );
+		return hash( 'sha512', $string . config_item('encryption_key') );
 	}
 
 }

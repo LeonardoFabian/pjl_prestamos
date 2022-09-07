@@ -18,3 +18,14 @@
 		visibility: visible;
 	}
 }
+
+.sidebar-dark .nav-item .nav-link,
+.sidebar-dark .nav-item .nav-link i {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+.sidebar-dark .nav-item .nav-link.active,
+.sidebar-dark .nav-item .nav-link.active i {
+	color: #f6c23e;
+}

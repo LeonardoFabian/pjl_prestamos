@@ -19,7 +19,7 @@
 						<div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
 					</div>
 					<div class="col-auto">
-						<i class="fas fa-calendar fa-2x text-gray-300"></i>
+						<i class="fas fa-users fa-2x text-gray-300"></i>
 					</div>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 			<div class="card-body">
 				<div class="row no-gutters align-items-center">
 					<div class="col mr-2">
-						<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Cobranzas
+						<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Préstamos Saldados
 						</div>
 						<div class="row no-gutters align-items-center">
 							<div class="col-auto">
@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="col-auto">
-						<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+						<i class="fas fa-check-double fa-2x text-gray-300"></i>
 					</div>
 				</div>
 			</div>
@@ -80,11 +80,11 @@
 				<div class="row no-gutters align-items-center">
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-							Pending Requests</div>
+							Préstamos por cobrar</div>
 						<div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
 					</div>
 					<div class="col-auto">
-						<i class="fas fa-comments fa-2x text-gray-300"></i>
+						<i class="fas fa-hand-holding-usd fa-2x text-gray-300"></i>
 					</div>
 				</div>
 			</div>

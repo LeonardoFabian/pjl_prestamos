@@ -23,7 +23,7 @@
 
 	<!-- Nav Item - Customers -->
 	<li class="nav-item">
-		<a class="nav-link" href="<?php echo site_url( 'admin/customers' ); ?>">
+		<a class="nav-link <?= ($this->uri->segment(2) == 'customers') ? 'active' : ''; ?>" href="<?php echo site_url( 'admin/customers' ); ?>">
 			<i class="fas fa-lg fa-users"></i>
 			<span>Clientes</span>
 		</a>
@@ -31,7 +31,7 @@
 
 	<!-- Nav Item - Coins -->
 	<li class="nav-item">
-		<a class="nav-link" href="<?php echo site_url( 'admin/coins' ); ?>">
+		<a class="nav-link <?= ($this->uri->segment(2) == 'coins') ? 'active' : ''; ?>" href="<?php echo site_url( 'admin/coins' ); ?>">
 			<i class="fas fa-lg fa-coins"></i>
 			<span>Monedas</span>
 		</a>
@@ -39,16 +39,16 @@
 
 	<!-- Nav Item - Loans -->
 	<li class="nav-item">
-		<a class="nav-link" href="<?php echo site_url( 'admin/loans' ); ?>">
-			<i class="far fa-money-bill-alt"></i>
+		<a class="nav-link <?= ($this->uri->segment(2) == 'loans') ? 'active' : ''; ?>" href="<?php echo site_url( 'admin/loans' ); ?>">
+			<i class="far fa-lg fa-money-bill-alt"></i>
 			<span>Prestamos</span>
 		</a>
 	</li>
 
 	<!-- Nav Item - Loans -->
 	<li class="nav-item">
-		<a class="nav-link" href="<?php echo site_url( 'admin/payments' ); ?>">
-			<i class="fas fa-cash-register"></i>
+		<a class="nav-link <?= ($this->uri->segment(2) == 'payments') ? 'active' : ''; ?>" href="<?php echo site_url( 'admin/payments' ); ?>">
+			<i class="fas fa-lg fa-cash-register"></i>
 			<span>Cobros</span>
 		</a>
 	</li>
@@ -59,20 +59,19 @@
 	</div> -->
 
 	<!-- Nav Item - Pages Collapse Menu -->
-	<!-- <li class="nav-item">
+	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
 			aria-expanded="true" aria-controls="collapseTwo">
 			<i class="fas fa-fw fa-cog"></i>
-			<span>Components</span>
+			<span>Configuración</span>
 		</a>
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Custom Components:</h6>
-				<a class="collapse-item" href="buttons.html">Buttons</a>
-				<a class="collapse-item" href="cards.html">Cards</a>
+				<a class="collapse-item" href="<?php echo site_url('admin/config'); ?>">Editar usuario</a>
+				<a class="collapse-item" href="<?php echo site_url('admin/config/change_password'); ?>">Cambiar Contraseña</a>
 			</div>
 		</div>
-	</li> -->
+	</li>
 
 	<!-- Nav Item - Utilities Collapse Menu -->
 	<!-- <li class="nav-item">

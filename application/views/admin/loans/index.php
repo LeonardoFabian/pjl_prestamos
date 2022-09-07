@@ -4,7 +4,7 @@
 		<h6 class="m-0 font-weight-bold text-primary">Préstamos</h6>
 		<!-- add customer button -->
 		<a class="d-sm-inline-block btn btn-primary" href="<?php echo site_url('admin/loans/edit'); ?>">
-			<i class="fas user-plus pr-2"></i>Nuevo prestamo
+		<i class="fas fa-plus-circle pr-2"></i>Nuevo prestamo
 		</a>
 	</div>
 	<div class="card-body">
@@ -82,8 +82,7 @@
 					<?php endforeach; else : ?>		
 						<tr>
 							<td colspan="8" class="text-center">
-								No existen prestamos registrados en el sistema, si desea puede registrar un  
-								<a class="d-sm-inline-block btn btn-primary" href="<?php echo site_url('admin/leans/edit'); ?>"> nuevo prestamo</a>
+								No existen prestamos registrados en el sistema, si desea puede registrar un  <a href="<?php echo site_url('admin/leans/edit'); ?>">Nuevo Préstamo</a>
 							</td>
 						</tr>
 					<?php endif; ?>
@@ -92,5 +91,8 @@
 		</div>
 	</div>
 </div>
+
+<!-- Floating Action Button -->	
+<?php $this->load->view( 'admin/components/fab' ); ?>
 
 <div class="modal fade" id="customerInfoModal" data-keyboard="false" tabindex="-1" aria-labelledby="staticModalTitle" aria-hidden="true"></div>

@@ -65,7 +65,7 @@
 										</div>
 									<?php } ?>
 
-                                    <form class="user" action="<?php echo site_url( 'user/login' ); ?>" method="POST">
+                                    <form class="user" action="<?php echo site_url( 'user/login' ); ?>" method="POST" autocomplete="off">
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user" id="inputEmail" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico...">
                                         </div>
