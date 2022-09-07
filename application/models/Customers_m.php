@@ -151,4 +151,14 @@ class Customers_m extends MY_Model {
 		return $outputCities;
 
 	}
+
+	public function get_countCustomers() 
+	{
+		$this->db->select( "count(*) as qty");
+		$this->db->from( 'customers' );
+
+		return $this->db->get()->row();
+	}
+
+	
 }

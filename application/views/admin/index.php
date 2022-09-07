@@ -16,7 +16,7 @@
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
 							Clientes</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+						<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $qtyCustomers->qty ?></div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-users fa-2x text-gray-300"></i>
@@ -34,7 +34,7 @@
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
 							Prestamos</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+						<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $qtyLoans->qty ?></div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -54,7 +54,7 @@
 						</div>
 						<div class="row no-gutters align-items-center">
 							<div class="col-auto">
-								<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">6</div>
+								<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $qtyPaidLoans->qty ?></div>
 							</div>
 							<div class="col">
 								<div class="progress progress-sm mr-2">
@@ -100,12 +100,52 @@
 	</div>
 	<div class="card-body">
 		<p class="text-center h5 mb-4">
-			Aquí tienes un resumen de los principales movimientos.
+			Préstamos por tipo de moneda.
 		</p>
 
-		<canvas id="grafica"></canvas>
+		<canvas id="loansByMoneyGraph"></canvas>
 	</div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+<script>
+	var loansByCoinsData = JSON.parse('<?php echo $loansByMoney; ?>');
+
+	console.log("datos", loansByCoinsData);
+
+	const $loansByMoneyGraph = document.querySelector("#loansByMoneyGraph");
+
+	const lbmGraphLabels = loansByCoinsData.label
+
+	const lbmGraphData = {
+
+		data: loansByCoinsData.data,
+
+		backgroundColor: [
+			'rgba(163,221,203,0.2)',
+			'rgba(232,233,161,0.2)',
+			'rgba(230,181,102,0.2)',
+			'rgba(229,112,126,0.2)',
+		], 
+		borderColor: [
+			'rgba(163,221,203,0.2)',
+			'rgba(232,233,161,0.2)',
+			'rgba(230,181,102,0.2)',
+			'rgba(229,112,126,0.2)',
+		],
+		borderWidth: 1,
+	};
+
+	new Chart( $loansByMoneyGraph, {
+		type: 'pie',
+		data: {
+			labels: lbmGraphLabels,
+			datasets: [
+				lbmGraphData,
+			]
+		},
+	});
+</script>
 
 <!-- Content Row -->
 

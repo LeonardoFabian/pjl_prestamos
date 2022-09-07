@@ -95,4 +95,22 @@ class Loans_m extends MY_Model {
 
 		return $this->db->get( 'loan_items' )->result();
 	}
+
+	public function get_countLoans()
+	{
+		$this->db->select( "count(*) as qty" );
+		$this->db->from( 'loans' );
+		$this->db->where( 'status', 1 );
+
+		return $this->db->get()->row();
+	}
+
+	public function get_countPaidLoans()
+	{
+		$this->db->select( "count(*) as qty" );
+		$this->db->from( 'loans' );
+		$this->db->where( 'status', 0 );
+
+		return $this->db->get()->row();
+	}
 }

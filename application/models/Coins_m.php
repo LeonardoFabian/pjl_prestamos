@@ -40,4 +40,20 @@ class Coins_m extends MY_Model {
 
 		return $coin;
 	}
+
+	public function get_countLoansByMoneyType()
+	{
+		$this->db->select(
+			"
+			co.name,
+			co.short_name,
+			count(l.id) as total
+			"
+		);
+		$this->db->from( 'loans l' );
+		$this->db->join( 'coins co', 'co.id = l.coin_id', 'left' );
+		$this->db->group_by( 'l.coin_id' );
+
+		return $this->db->get()->result();
+	}
 }
