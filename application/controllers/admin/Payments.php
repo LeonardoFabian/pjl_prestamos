@@ -45,11 +45,12 @@ class Payments extends CI_Controller {
 
 	function checkout()
 	{
+		// print_r($_POST);
 		$data['customer_name'] = $this->input->post('customer_name');  
 		$data['coin'] = $this->input->post('coin');  
 		$data['loan_id'] = $this->input->post('loan_id');  
 
-		foreach ( $this->input->post('quota_id') as $quota ) {
+		foreach ( $this->input->post('quota_id') as $quota ) {			
 			$this->payments_m->update_quota(['status' => 0], $quota );
 		}
 

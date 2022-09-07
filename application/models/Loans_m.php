@@ -113,4 +113,5 @@ class Loans_m extends MY_Model {
 
 		return $this->db->get()->row();
 	}
+
 }

@@ -11,6 +11,8 @@ class Dashboard extends CI_Controller {
 		$this->load->model( 'customers_m' );
 		$this->load->model( 'loans_m' );
 		$this->load->model( 'coins_m' );
+
+		$this->session->userdata('loggedin') == TRUE || redirect( 'user/login' );
 	}
 
 	public function index()

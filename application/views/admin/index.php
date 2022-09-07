@@ -33,7 +33,7 @@
 				<div class="row no-gutters align-items-center">
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-							Prestamos</div>
+							Préstamos otorgados</div>
 						<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $qtyLoans->qty ?></div>
 					</div>
 					<div class="col-auto">
@@ -60,7 +60,7 @@
 								<div class="progress progress-sm mr-2">
 									<div class="progress-bar bg-info" role="progressbar"
 										style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-										aria-valuemax="100"></div>
+										aria-valuemax="100%"></div>
 								</div>
 							</div>
 						</div>

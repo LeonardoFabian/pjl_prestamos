@@ -172,11 +172,11 @@ $(document).ready(function() {
 
 			$.post( base_url + "admin/payments/ajax_searchCustomer", {dni: dni}, function(data) {
 
-				console.log('sin parse', data)
+				// console.log('sin parse', data)
 
 				data = JSON.parse(data);
 
-				console.log('con parse', data )
+				// console.log('con parse', data )
 
 				if ( data.customer == null ) {
 
@@ -194,6 +194,8 @@ $(document).ready(function() {
 				} else {
 
 					$("#dni").val('');
+					$("#loan_id").val(data.customer.loan_id);
+					$("#customer_id").val(data.customer.customer_id);
 					$("#customer_document_id").val(data.customer.document_id);
 					$("#customer_name").val(data.customer.client_name);
 					$("#credit_amount").val(data.customer.credit_amount);

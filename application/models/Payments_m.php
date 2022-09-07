@@ -106,4 +106,5 @@ class Payments_m extends CI_Model {
 		$this->db->where_in( 'id', $data );
 		return $this->db->get( 'loan_items' )->result();
 	}
+	
 }

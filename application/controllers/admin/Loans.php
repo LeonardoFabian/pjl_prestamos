@@ -82,11 +82,11 @@ class Loans extends CI_Controller {
 
 	}
 
-	function view( $id ) 
+	public function view( $id ) 
 	{
 		$data['loan'] = $this->loans_m->get_loan( $id );
 		$data['items'] = $this->loans_m->get_loanItems( $id );
 
 		$this->load->view( 'admin/loans/view', $data );
-	}
+	}	
 }

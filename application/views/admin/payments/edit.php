@@ -22,7 +22,7 @@
 					<label for="dni"><i class="fas fa-id-card fa-lg mr-2"></i>Consultar Documento de Identidad</label>
 					<div class="input-group">						
 						<input type="text" id="dni" class="form-control" value="" placeholder="Ej.: 00100000002">
-						<input type="hidden" name="loan_id" id="loan_id">
+						<input type="hidden" name="loan_id" id="loan_id" value="">
 						<input type="hidden" name="customer_id" id="customer_id">
 						<div class="input-group-append">
 							<button type="button" id="search-client" class="btn btn-primary">
