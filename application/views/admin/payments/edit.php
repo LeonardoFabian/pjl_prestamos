@@ -80,7 +80,7 @@
 					<table class="table table-bordered" id="quotas" width="100%" cellspacing="0">
 						<thead>
 							<tr>
-								<th><input type="checkbox"></th>
+								<th><input type="checkbox" id="quota-checkbox-selector"></th>
 								<th>Nº Cuota</th>
 								<th>Fecha de pago</th>
 								<th>Monto</th>

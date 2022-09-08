@@ -42,6 +42,7 @@ class Payments_m extends CI_Model {
 		$this->db->join( 'loans l', 'l.customer_id = c.id', 'left' );
 		$this->db->join( 'coins co', 'co.id = l.coin_id', 'left' );
 		$this->db->where(['c.loan_status' => 1, 'c.document_id' => $document_id]);
+		$this->db->order_by('l.id', 'desc');
 
 		return $this->db->get()->row();
 

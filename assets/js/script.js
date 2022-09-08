@@ -250,6 +250,38 @@ $(document).ready(function() {
 
 	$("#search-client").click( callback_payment );
 
+	// Select and deselect all checkbox when thead checkbox is clicked
+	$("#quota-checkbox-selector").on('change', function() {
+
+		checkboxes = $("input[type='checkbox']");
+
+		for (var i = 0, max = checkboxes.length; i < max; i++){
+			if (checkboxes[i].checked === true) {
+				$("input[type='checkbox']").prop("checked", false);
+			} else {
+				$("input[type='checkbox']").prop("checked", true);
+			}
+		}
+
+		// if ( checkboxes.checked === true) {
+
+		// 	checkboxes.prop("checked", false )
+
+		// } else {
+
+		// 	checkboxes.prop("checked", false )
+
+		// }
+
+		// $("input[type='checkbox']").prop("checked", true);
+
+		// checkboxes = document.getElementsByTagName("input");
+		// for (var i = 0, max = allInputs.length; i < max; i++){
+		// 	if (allInputs[i].type === 'checkbox')
+		// 		allInputs[i].checked = true;
+		// }
+	})
+
 
 });
 

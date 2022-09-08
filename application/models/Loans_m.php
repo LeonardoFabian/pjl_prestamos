@@ -114,4 +114,15 @@ class Loans_m extends MY_Model {
 		return $this->db->get()->row();
 	}
 
+	public function get_countCurrentMonthQuotas($currentYear, $currentMonth) 
+	{
+		$this->db->select( "count(num_quota) as qty" );
+		$this->db->from( 'loan_items' );
+		$this->db->where( "YEAR(date)", $currentYear);
+		$this->db->where( "MONTH(date)", $currentMonth);
+		$this->db->where( 'status', 1 );
+
+		return $this->db->get()->row();
+	}
+
 }

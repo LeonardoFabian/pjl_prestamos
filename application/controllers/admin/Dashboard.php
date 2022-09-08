@@ -21,6 +21,11 @@ class Dashboard extends CI_Controller {
 		$data['qtyLoans'] = $this->loans_m->get_countLoans();
 		$data['qtyPaidLoans'] = $this->loans_m->get_countPaidLoans();
 
+		$currentYear = date("Y");
+		$currentMonth = date("m");
+
+		$data['qtyMonthQuotas'] = $this->loans_m->get_countCurrentMonthQuotas($currentYear, $currentMonth);
+
 		$loansByMoneyType = $this->coins_m->get_countLoansByMoneyType();
 
 		$dataLoansByMoneyType = [];
