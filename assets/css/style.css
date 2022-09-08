@@ -21,11 +21,15 @@
 
 .sidebar-dark .nav-item .nav-link,
 .sidebar-dark .nav-item .nav-link i {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	text-transform: uppercase;
 }
 
 .sidebar-dark .nav-item .nav-link.active,
 .sidebar-dark .nav-item .nav-link.active i {
 	color: #f6c23e;
+}
+
+.sidebar .nav-item .collapse .collapse-inner .collapse-item:hover {
+	color: #2f56c8 !important;
 }

@@ -60,15 +60,31 @@
 
 	<!-- Nav Item - Pages Collapse Menu -->
 	<li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+		<a class="nav-link collapsed <?= ($this->uri->segment(2) == 'reports') ? 'active' : ''; ?>" href="#" data-toggle="collapse" data-target="#collapseReports"
+			aria-expanded="true" aria-controls="collapseReports">
+			<i class="fas fa-file-alt"></i>
+			<span>Reportes</span>
+		</a>
+		<div id="collapseReports" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+			<div class="py-2 collapse-inner rounded">
+				<a class="collapse-item text-white hover:text-primary" href="<?php echo site_url('admin/reports'); ?>">Reporte General</a>
+				<a class="collapse-item text-white" href="<?php echo site_url('admin/reports/dates'); ?>">Por Periodo</a>
+				<a class="collapse-item text-white" href="<?php echo site_url('admin/reports/customers'); ?>">Por Cliente</a>
+			</div>
+		</div>
+	</li>
+
+	<!-- Nav Item - Pages Collapse Menu -->
+	<li class="nav-item">
+		<a class="nav-link collapsed <?= ($this->uri->segment(2) == 'config') ? 'active' : ''; ?>" href="#" data-toggle="collapse" data-target="#collapseTwo"
 			aria-expanded="true" aria-controls="collapseTwo">
 			<i class="fas fa-fw fa-cog"></i>
 			<span>Configuración</span>
 		</a>
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="<?php echo site_url('admin/config'); ?>">Editar usuario</a>
-				<a class="collapse-item" href="<?php echo site_url('admin/config/change_password'); ?>">Cambiar Contraseña</a>
+			<div class="py-2 collapse-inner rounded">
+				<a class="collapse-item text-white" href="<?php echo site_url('admin/config'); ?>">Editar usuario</a>
+				<a class="collapse-item text-white" href="<?php echo site_url('admin/config/change_password'); ?>">Cambiar Contraseña</a>
 			</div>
 		</div>
 	</li>
