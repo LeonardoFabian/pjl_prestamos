@@ -30,6 +30,15 @@
 	color: #f6c23e;
 }
 
-.sidebar .nav-item .collapse .collapse-inner .collapse-item:hover {
-	color: #2f56c8 !important;
+@media (min-width: 768px) {
+	.sidebar .nav-item .collapse .collapse-inner .collapse-item {
+		color: #FFFFFF;
+	}
+	.sidebar .nav-item .collapse .collapse-inner .collapse-item:hover {
+		color: #2f56c8 !important;
+	}	
+}
+
+.sidebar .nav-item .collapse {
+	background-color: #2f56c8;
 }

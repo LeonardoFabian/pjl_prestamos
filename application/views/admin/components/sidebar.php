@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 	<!-- Sidebar - Brand -->
-	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url(); ?>">
 		<div class="sidebar-brand-icon rotate-n-15">
 			<i class="fas fa-dollar-sign"></i>
 		</div>
@@ -67,9 +67,9 @@
 		</a>
 		<div id="collapseReports" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="py-2 collapse-inner rounded">
-				<a class="collapse-item text-white hover:text-primary" href="<?php echo site_url('admin/reports'); ?>">Reporte General</a>
-				<a class="collapse-item text-white" href="<?php echo site_url('admin/reports/dates'); ?>">Por Periodo</a>
-				<a class="collapse-item text-white" href="<?php echo site_url('admin/reports/customers'); ?>">Por Cliente</a>
+				<a class="collapse-item " href="<?php echo site_url('admin/reports'); ?>">Reporte General</a>
+				<a class="collapse-item " href="<?php echo site_url('admin/reports/dates'); ?>">Por Periodo</a>
+				<a class="collapse-item " href="<?php echo site_url('admin/reports/customers'); ?>">Por Cliente</a>
 			</div>
 		</div>
 	</li>
@@ -83,8 +83,8 @@
 		</a>
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="py-2 collapse-inner rounded">
-				<a class="collapse-item text-white" href="<?php echo site_url('admin/config'); ?>">Editar usuario</a>
-				<a class="collapse-item text-white" href="<?php echo site_url('admin/config/change_password'); ?>">Cambiar Contraseña</a>
+				<a class="collapse-item " href="<?php echo site_url('admin/config'); ?>">Editar usuario</a>
+				<a class="collapse-item " href="<?php echo site_url('admin/config/change_password'); ?>">Cambiar Contraseña</a>
 			</div>
 		</div>
 	</li>

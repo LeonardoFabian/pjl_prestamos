@@ -22,26 +22,26 @@
 			</div>
 
 			<div class="form-row pb-4">
-				<div class="col">
+				<div class="col-12 col-md-6 mb-4">
 					<label for="name">Nombre (plural) <sup class="text-danger">*</sup></label>
 					<input type="text" id="name" name="name" class="form-control" value="<?php echo set_value('name', $this->input->post('name') ? $this->input->post('name') : $coin->name ); ?>" placeholder="Ej.: Dólares">
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-6 mb-4">
 					<label for="singular_name">Nombre (singular)<sup class="text-danger">*</sup></label>
 					<input type="text" id="singular_name" name="singular_name" class="form-control" value="<?php echo set_value('singular_name', $this->input->post('singular_name') ? $this->input->post('singular_name') : $coin->singular_name ); ?>" placeholder="Ej.: Dólar">
 				</div>							
 			</div>
 
 			<div class="form-row pb-2">		
-				<div class="col-2">
+				<div class="col-12 col-md-2 mb-4">
 					<label for="short_name">Código (Abreviatura) <sup class="text-danger">*</sup></label>
 					<input type="text" id="short_name" name="short_name" class="form-control" value="<?php echo set_value('short_name', $this->input->post('short_name') ? $this->input->post('short_name') : $coin->short_name ); ?>" placeholder="Ej.: USD">
 				</div>	
-				<div class="col-2">
+				<div class="col-12 col-md-2 mb-4">
 					<label for="symbol">Símbolo <sup class="text-danger">*</sup></label>
 					<input type="text" id="symbol" name="symbol" class="form-control" value="<?php echo set_value('symbol', $this->input->post('symbol') ? $this->input->post('symbol') : $coin->symbol ); ?>" placeholder="Ej.: $">
 				</div>				
-				<div class="col">
+				<div class="col-12 col-md-8 mb-4">
 					<label for="description">Descripción <sup class="text-danger">*</sup></label>
 					<input type="text" id="description" name="description" class="form-control" value="<?php echo set_value('description', $this->input->post('description') ? $this->input->post('description') : $coin->description ); ?>" placeholder="Ej.: Dólar estadounidense">
 				</div>	

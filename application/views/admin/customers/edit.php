@@ -22,22 +22,22 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col-3">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="document_id">Documento de Identidad <sup class="text-danger">*</sup></label>
 					<input type="text" id="document_id" name="document_id" class="form-control" value="<?php echo set_value('document_id', $this->input->post('document_id') ? $this->input->post('document_id') : $customer->document_id ); ?>">
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="first_name">Nombre <sup class="text-danger">*</sup></label>
 					<input type="text" id="first_name" name="first_name" class="form-control" value="<?php echo set_value('first_name', $this->input->post('first_name') ? $this->input->post('first_name') : $customer->first_name ); ?>">
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="last_name">Apellidos <sup class="text-danger">*</sup></label>
 					<input type="text" id="last_name" name="last_name" class="form-control" value="<?php echo set_value('last_name', $this->input->post('last_name') ? $this->input->post('last_name') : $customer->last_name ); ?>">
 				</div>				
 			</div>
 
 			<div class="form-row pb-2">				
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="gender">Género</label>
 					<select id="gender" name="gender" class="form-control">
 						<?php if ( $customer->gender == 'none' ) : ?>
@@ -48,7 +48,7 @@
 						<option value="no especificado" <?php if ($customer->gender == 'no especificado') echo "selected" ?>>No especificado</option>
 					</select>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="birthday">Fecha de nacimiento <sup class="text-danger">*</sup></label>
 					<input type="date" id="birthday" name="birthday" class="form-control">
 				</div>	
@@ -62,7 +62,7 @@
 
 			<div class="form-row pb-2">
 				<!-- country -->
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="country_id">País <sup class="text-danger">*</sup></label>
 					<select id="country_id" name="country_id" class="form-control">
 						<?php if ( $customer->country_id == 0 ) : ?>
@@ -75,7 +75,7 @@
 				</div>
 				<!-- /country -->
 				<!-- state -->
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="state_id">Provincia o Estado <sup class="text-danger">*</sup></label>
 					<select id="state_id" name="state_id" class="form-control">
 						<?php if ( $customer->state_id == 0 ) : ?>
@@ -89,7 +89,7 @@
 				</div>
 				<!-- /state -->
 				<!-- city -->
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="city_id">Ciudad o Municipio <sup class="text-danger">*</sup></label>
 					<select id="city_id" name="city_id" class="form-control">
 						<?php if ( $customer->city_id == 0 ) : ?>
@@ -105,17 +105,17 @@
 			</div>
 
 			<!-- address -->
-			<div class="form-row pb-2">
+			<div class="form-row pb-2 mb-4">
 				<label for="address">Dirección</label>
     			<textarea class="form-control" id="address" name="address" rows="3" value=""></textarea>
 			</div>
 			
 			<div class="form-row pb-2">
-				<div class="col-3">
+				<div class="col-6 col-md-3">
 					<label for="apto">Apto/Casa <sup class="text-danger">*</sup></label>
 					<input type="text" id="apto" name="apto" class="form-control" value="">
 				</div>
-				<div class="col-3">
+				<div class="col-6 col-md-3">
 					<label for="floor">Piso</label>
 					<input type="text" id="floor" name="floor" class="form-control" value="">
 				</div>
@@ -128,15 +128,15 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col">
+				<div class="col-12 col-md-3 mb-4">
 					<label for="mobile">Celular <sup class="text-danger">*</sup></label>
 					<input type="text" id="mobile" name="mobile" class="form-control" value="">
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-3 mb-4">
 					<label for="phone">Télefono</label>
 					<input type="text" id="phone" name="phone" class="form-control" value="">
 				</div>
-				<div class="col-6">
+				<div class="col-12 col-md-6 mb-4">
 					<label for="email">Correo</label>
 					<input type="email" id="email" name="email"  class="form-control" value="">
 				</div>				
@@ -149,26 +149,26 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col-3">
-					<label for="business_name">Razón Social</label>
-					<input type="text" id="business_name" name="business_name"  class="form-control" value="">
-				</div>
-				<div class="col">
+				<div class="col-12 col-md-3 mb-4">
 					<label for="rnc">RNC</label>
 					<input type="text" id="rnc" name="rnc" class="form-control" value="">
 				</div>
-				<div class="col-6">
+				<div class="col-12 col-md-3 mb-4">
+					<label for="business_name">Razón Social</label>
+					<input type="text" id="business_name" name="business_name"  class="form-control" value="">
+				</div>				
+				<div class="col-12 col-md-6 mb-4">
 					<label for="company">Nombre Comercial</label>
 					<input type="text" id="company" name="company" class="form-control" value="">
 				</div>				
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col-3">
+				<div class="col-12 col-md-3 mb-4">
 					<label for="company_phone">Télefono de la empresa</label>
 					<input type="text" name="company_phone" id="company_phone" class="form-control" value="">
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-9 mb-4">
 					<label for="company_address">Dirección de la empresa</label>
 					<input type="text" name="company_address" id="company_address" class="form-control" value="">
 				</div>				

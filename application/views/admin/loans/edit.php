@@ -18,7 +18,7 @@
 		<?php echo form_open( 'admin/loans/edit', 'id="loan_form"' ); ?>
 
 			<div class="form-row mt-4 mb-4 text-center">
-				<div class="col-4 m-auto">
+				<div class="col-12 col-md-4 m-auto">
 					<label for="name"><i class="fas fa-id-card fa-lg mr-2"></i>Consultar Documento de Identidad</label>
 					<div class="input-group">						
 						<input type="text" id="document_id" class="form-control" value="" placeholder="Ej.: 00100000002">
@@ -37,11 +37,11 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="customer_document_id">Documento de Identidad</label>
 					<input type="text" id="customer_document_id" class="form-control" value="" disabled>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="customer_name">Nombre</label>
 					<input type="text" id="customer_name" class="form-control text-uppercase" value="" disabled>
 				</div>
@@ -54,22 +54,22 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="credit_amount">Monto solicitado</label>
 					<input type="number" id="credit_amount" name="credit_amount" class="form-control">
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="interest_amount">Interés (%)</label>
 					<input type="number" id="interest_amount" name="interest_amount" class="form-control" >
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="num_fee">Cuotas</label>
 					<input type="number" id="num_fee" name="num_fee" class="form-control" >
 				</div>
 			</div>
 
 			<div class="form-row pb-2">				
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="payment_m">Forma de pago</label>
 					<select id="payment_m" name="payment_m" class="form-control">
 						<option value="diario">Diario</option>
@@ -78,7 +78,7 @@
 						<option value="mensual">Mensual</option>
 					</select>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="coin_id">Tipo de moneda</label>
 					<select id="coin_id" name="coin_id" class="form-control">
 						<?php foreach( $coins as $coin ) : ?>
@@ -89,7 +89,7 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col-3">
+				<div class="col-12 col-md-3 mb-4">
 					<label for="issue_date">Fecha de emisión</label>
 					<input type="date" id="issue_date" name="date" class="form-control">
 				</div>
@@ -102,15 +102,15 @@
 			</div>		
 
 			<div class="calc-loan-info form-row py-5 px-4">
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="fee_amount">Cuota</label>
 					<input type="text" id="fee_amount" name="fee_amount" class="form-control" readonly>
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="interest_value">Interés (%)</label>
 					<input type="text" id="interest_value" name="" class="form-control" disabled>
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="total_amount">Total</label>
 					<input type="text" id="total_amount" name="" class="form-control" disabled>
 				</div>

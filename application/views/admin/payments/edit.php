@@ -18,7 +18,7 @@
 		<?php echo form_open( 'admin/payments/checkout' ); ?>
 
 			<div class="form-row mt-4 mb-4 text-center">
-				<div class="col-4 m-auto">
+				<div class="col-12 col-md-4 m-auto">
 					<label for="dni"><i class="fas fa-id-card fa-lg mr-2"></i>Consultar Documento de Identidad</label>
 					<div class="input-group">						
 						<input type="text" id="dni" class="form-control" value="" placeholder="Ej.: 00100000002">
@@ -38,11 +38,11 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="customer_document_id">Documento de Identidad</label>
 					<input type="text" id="customer_document_id" class="form-control" value="" readonly>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="customer_name">Nombre</label>
 					<input type="text" id="customer_name" name="customer_name" class="form-control text-uppercase" value="" readonly>
 				</div>
@@ -55,15 +55,15 @@
 			</div>
 
 			<div class="form-row pb-2">
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="credit_amount">Monto solicitado</label>
 					<input type="text" id="credit_amount" name="credit_amount" class="form-control" disabled>
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="payment_m">Forma de pago</label>
 					<input type="text" id="payment_m" name="payment_m" class="form-control" disabled>
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4 mb-4">
 					<label for="coin">Moneda</label>
 					<input type="text" id="coin" name="coin" class="form-control" readonly>
 				</div>
